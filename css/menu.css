@@ -223,6 +223,7 @@
   overflow: hidden;
   background: none;
   border-radius: 1.5vmin;
+  pointer-events: none;
 }
 
 .sky {

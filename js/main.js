@@ -9,7 +9,6 @@
 $(document).ready(function(){
   let startLife = 40;
   const maxPlayer = 6
-  let currentPlayer = 6;
   const newGameState = [
     // [life,[cmd1, cmd2, cmd3, cmd4, cmd5, cmd6], dead, poison, monarch, initiative, [w,u,t,r,g]],
     [startLife, [0,0,0,0,0,0], false, 0, false, false, [false, false, false, false, false]],
@@ -18,8 +17,8 @@ $(document).ready(function(){
     [startLife, [0,0,0,0,0,0], false, 0, false, false, [false, false, false, false, false]],
     [startLife, [0,0,0,0,0,0], false, 0, false, false, [false, false, false, false, false]],
     [startLife, [0,0,0,0,0,0], false, 0, false, false, [false, false, false, false, false]],
-    // [monarch, initiative]
-    [false, false]
+    // [playerNumber, monarch, initiative]
+    [2, false, false]
   ];
 
   let aniNames = [
@@ -84,6 +83,7 @@ $(document).ready(function(){
     updateLocalStorage();
   }
 
+  let playerGrid = $('.playersGrid');
   let lifeBtns = $('.lifeBtn');
   let cmdBtns = $('.CMD');
 
@@ -105,6 +105,7 @@ $(document).ready(function(){
   let flipBtns = $('.flipBtn');
 
   let resetBtn = $('.reset');
+  let setPlayersBtn = $('.setPlayers');
 
 
   let menu = $('.menu');
@@ -140,12 +141,13 @@ $(document).ready(function(){
   flipBtns.click(flipCard);
 
   resetBtn.click(reset);
+  setPlayersBtn.click(changePlayers);
 
   setup();
 
   function setup() {
-    let playerGrid = $('.playersGrid');
-    playerGrid.addClass('numP' + currentPlayer).css('opacity', 1);
+
+    playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
     let playerCards = $('.playerCard');
 
     let lifeValues = $('.lValue');
@@ -263,6 +265,16 @@ $(document).ready(function(){
     }
     updateLocalStorage();
     location.reload();
+  }
+  function changePlayers() {
+    let newPlayers = gameState[6][0] + 1
+    playerGrid.removeClass('numP' + gameState[6][0]).css('opacity', 0);
+    if (newPlayers > 6) {
+      newPlayers = 2;
+    }
+    gameState[6][0] = newPlayers;
+    playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
+    updateLocalStorage();
   }
 
   function changeLife() {
