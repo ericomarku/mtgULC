@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>MTG Ultimate Life Counter.</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/portrait.css"/>
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <div class="playersGrid">
+
+      <div class="playerCard p1">
+        <div class="card-inner">
+
+          <div class="card-face-dead face"></div>
+
+          <div class="card-face-front face c1">
+
+            <button type="button" class="addLbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subLbtn lifeBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="lifeCount">
+
+              <p class="lChange">0</p>
+              <p class="lValue">40</p>
+              <img class="lIcon" src="css/img/player-icons/life.svg"/>
+
+            </div>
+
+            <div class="colorSelect">
+              <label class="colorContainer W">
+                <input type="checkbox" class="W-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer U">
+                <input type="checkbox" class="U-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer B">
+                <input type="checkbox" class="B-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer R">
+                <input type="checkbox" class="R-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer G">
+                <input type="checkbox" class="G-box">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <div class="skyflame">
+              <div class="sky"></div>
+            </div>
+          </div>
+
+          <div class="card-face-back face">
+
+            <div class="CMD-DMG-Container">
+              <div class="header">
+                <p class="main">CMD Damage</p>
+                <p class="under">Hold to reset.</p>
+              </div>
+              <div class="CMD-DMG">
+                <div class="CMD p1">
+                  <!-- <div class="c1"></div>
+                  <p class="CMDValue">Me</p> -->
+                  <button type="button" class="deathBtn">
+                    <img src="css/img/player-icons/death.svg">
+                  </button>
+                </div>
+                <div class="CMD p2">
+                  <div class="c2"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p3">
+                  <div class="c3"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p4">
+                  <div class="c4"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p5">
+                  <div class="c5"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p6">
+                  <div class="c6"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="concede">
+              <p>Do You Admit Defeat ?</p>
+              <span>
+                <button type="button" class="defeat">Yes</button>
+                or
+                <button type="button" class="defiant">No</button>
+              </span>
+            </div>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <p>You become the monarch.</p>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+              <p>You take the initiative.</p>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="playerCard p2">
+        <div class="card-inner">
+
+          <div class="card-face-dead"></div>
+
+          <div class="card-face-front c2">
+
+            <button type="button" class="addLbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subLbtn lifeBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="lifeCount">
+
+              <p class="lChange">0</p>
+              <p class="lValue">40</p>
+              <img class="lIcon" src="css/img/player-icons/life.svg"/>
+
+            </div>
+
+            <div class="colorSelect">
+              <label class="colorContainer W">
+                <input type="checkbox" class="W-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer U">
+                <input type="checkbox" class="U-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer B">
+                <input type="checkbox" class="B-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer R">
+                <input type="checkbox" class="R-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer G">
+                <input type="checkbox" class="G-box">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+            </div> -->
+
+            <div class="skyflame">
+              <div class="sky"></div>
+            </div>
+          </div>
+
+          <div class="card-face-back">
+
+            <div class="CMD-DMG-Container">
+              <div class="header">
+                <p class="main">CMD Damage</p>
+                <p class="under">Hold to reset.</p>
+              </div>
+              <div class="CMD-DMG">
+                <div class="CMD p1">
+                  <div class="c1"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p2">
+                  <!-- <div class="c2"></div>
+                  <p class="CMDValue">Me</p> -->
+                  <button type="button" class="deathBtn">
+                    <img src="css/img/player-icons/death.svg" alt="">
+                  </button>
+                </div>
+                <div class="CMD p3">
+                  <div class="c3"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p4">
+                  <div class="c4"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p5">
+                  <div class="c5"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p6">
+                  <div class="c6"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="concede">
+              <p>Do You Admit Defeat ?</p>
+              <span>
+                <button type="button" class="defeat">Yes</button>
+                or
+                <button type="button" class="defiant">No</button>
+              </span>
+            </div>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <p>You become the monarch.</p>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+              <p>You take the initiative.</p>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="playerCard p3">
+        <div class="card-inner">
+
+          <div class="card-face-dead"></div>
+
+          <div class="card-face-front c3">
+
+            <button type="button" class="addLbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subLbtn lifeBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="lifeCount">
+
+              <p class="lChange">0</p>
+              <p class="lValue">40</p>
+              <img class="lIcon" src="css/img/player-icons/life.svg"/>
+
+            </div>
+
+            <div class="colorSelect">
+              <label class="colorContainer W">
+                <input type="checkbox" class="W-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer U">
+                <input type="checkbox" class="U-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer B">
+                <input type="checkbox" class="B-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer R">
+                <input type="checkbox" class="R-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer G">
+                <input type="checkbox" class="G-box">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+            </div> -->
+
+            <div class="skyflame">
+              <div class="sky"></div>
+            </div>
+          </div>
+
+          <div class="card-face-back">
+
+            <div class="CMD-DMG-Container">
+              <div class="header">
+                <p class="main">CMD Damage</p>
+                <p class="under">Hold to reset.</p>
+              </div>
+              <div class="CMD-DMG">
+                <div class="CMD p1">
+                  <div class="c1"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p2">
+                  <div class="c2"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p3">
+                  <!-- <div class="c3"></div>
+                  <p class="CMDValue">Me</p> -->
+                  <button type="button" class="deathBtn">
+                    <img src="css/img/player-icons/death.svg" alt="">
+                  </button>
+                </div>
+                <div class="CMD p4">
+                  <div class="c4"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p5">
+                  <div class="c5"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p6">
+                  <div class="c6"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="concede">
+              <p>Do You Admit Defeat ?</p>
+              <span>
+                <button type="button" class="defeat">Yes</button>
+                or
+                <button type="button" class="defiant">No</button>
+              </span>
+            </div>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <p>You become the monarch.</p>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+              <p>You take the initiative.</p>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="playerCard p4">
+        <div class="card-inner">
+
+          <div class="card-face-dead"></div>
+
+          <div class="card-face-front c4">
+
+            <button type="button" class="addLbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subLbtn lifeBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="lifeCount">
+
+              <p class="lChange">0</p>
+              <p class="lValue">40</p>
+              <img class="lIcon" src="css/img/player-icons/life.svg"/>
+
+            </div>
+
+            <div class="colorSelect">
+              <label class="colorContainer W">
+                <input type="checkbox" class="W-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer U">
+                <input type="checkbox" class="U-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer B">
+                <input type="checkbox" class="B-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer R">
+                <input type="checkbox" class="R-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer G">
+                <input type="checkbox" class="G-box">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+            </div> -->
+
+            <div class="skyflame">
+              <div class="sky"></div>
+            </div>
+          </div>
+
+          <div class="card-face-back">
+
+            <div class="CMD-DMG-Container">
+              <div class="header">
+                <p class="main">CMD Damage</p>
+                <p class="under">Hold to reset.</p>
+              </div>
+              <div class="CMD-DMG">
+                <div class="CMD p1">
+                  <div class="c1"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p2">
+                  <div class="c2"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p3">
+                  <div class="c3"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p4">
+                  <!-- <div class="c4"></div>
+                  <p class="CMDValue">Me</p> -->
+                  <button type="button" class="deathBtn">
+                    <img src="css/img/player-icons/death.svg" alt="">
+                  </button>
+                </div>
+                <div class="CMD p5">
+                  <div class="c5"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p6">
+                  <div class="c6"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="concede">
+              <p>Do You Admit Defeat ?</p>
+              <span>
+                <button type="button" class="defeat">Yes</button>
+                or
+                <button type="button" class="defiant">No</button>
+              </span>
+            </div>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <p>You become the monarch.</p>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+              <p>You take the initiative.</p>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="playerCard p5">
+        <div class="card-inner">
+
+          <div class="card-face-dead"></div>
+
+          <div class="card-face-front c5">
+
+            <button type="button" class="addLbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subLbtn lifeBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="lifeCount">
+
+              <p class="lChange">0</p>
+              <p class="lValue">40</p>
+              <img class="lIcon" src="css/img/player-icons/life.svg"/>
+
+            </div>
+
+            <div class="colorSelect">
+              <label class="colorContainer W">
+                <input type="checkbox" class="W-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer U">
+                <input type="checkbox" class="U-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer B">
+                <input type="checkbox" class="B-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer R">
+                <input type="checkbox" class="R-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer G">
+                <input type="checkbox" class="G-box">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+            </div> -->
+
+            <div class="skyflame">
+              <div class="sky"></div>
+            </div>
+          </div>
+
+          <div class="card-face-back">
+
+            <div class="CMD-DMG-Container">
+              <div class="header">
+                <p class="main">CMD Damage</p>
+                <p class="under">Hold to reset.</p>
+              </div>
+              <div class="CMD-DMG">
+                <div class="CMD p1">
+                  <div class="c1"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p2">
+                  <div class="c2"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p3">
+                  <div class="c3"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p4">
+                  <div class="c4"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p5">
+                  <!-- <div class="c5"></div>
+                  <p class="CMDValue">Me</p> -->
+                  <button type="button" class="deathBtn">
+                    <img src="css/img/player-icons/death.svg" alt="">
+                  </button>
+                </div>
+                <div class="CMD p6">
+                  <div class="c6"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="concede">
+              <p>Do You Admit Defeat ?</p>
+              <span>
+                <button type="button" class="defeat">Yes</button>
+                or
+                <button type="button" class="defiant">No</button>
+              </span>
+            </div>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <p>You become the monarch.</p>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+              <p>You take the initiative.</p>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="playerCard p6">
+        <div class="card-inner">
+
+          <div class="card-face-dead"></div>
+
+          <div class="card-face-front c6">
+
+            <button type="button" class="addLbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subLbtn lifeBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="lifeCount">
+
+              <p class="lChange">0</p>
+              <p class="lValue">40</p>
+              <img class="lIcon" src="css/img/player-icons/life.svg"/>
+
+            </div>
+
+            <div class="colorSelect">
+              <label class="colorContainer W">
+                <input type="checkbox" class="W-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer U">
+                <input type="checkbox" class="U-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer B">
+                <input type="checkbox" class="B-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer R">
+                <input type="checkbox" class="R-box">
+                <span class="checkmark"></span>
+              </label>
+              <label class="colorContainer G">
+                <input type="checkbox" class="G-box">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+            </div> -->
+
+            <div class="skyflame">
+              <div class="sky"></div>
+            </div>
+          </div>
+
+          <div class="card-face-back">
+
+            <div class="CMD-DMG-Container">
+              <div class="header">
+                <p class="main">CMD Damage</p>
+                <p class="under">Hold to reset.</p>
+              </div>
+              <div class="CMD-DMG">
+                <div class="CMD p1">
+                  <div class="c1"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p2">
+                  <div class="c2"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p3">
+                  <div class="c3"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p4">
+                  <div class="c4"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p5">
+                  <div class="c5"></div>
+                  <p class="CMDValue">0</p>
+                </div>
+                <div class="CMD p6">
+                  <!-- <div class="c6"></div>
+                  <p class="CMDValue">Me</p> -->
+                  <button type="button" class="deathBtn">
+                    <img src="css/img/player-icons/death.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="concede">
+              <p>Do You Admit Defeat ?</p>
+              <span>
+                <button type="button" class="defeat">Yes</button>
+                or
+                <button type="button" class="defiant">No</button>
+              </span>
+            </div>
+
+            <div class="poisonContainer">
+              <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
+              <p class="pValue">0</p>
+            </div>
+
+            <!-- <div class="statusContainer">
+              <div class="monarch">
+                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
+              </div>
+              <p>You become the monarch.</p>
+              <div class="initiative">
+                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
+              </div>
+              <p>You take the initiative.</p>
+            </div> -->
+
+            <button type="button" class="flipBtn">
+              <img src="css/img/player-icons/flip.svg" class="flip-icon">
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="menu closed" draggable="true">
+      <div class="menuItems rotate">
+        <div id="mI0" class="reset menuItem">
+          <img src="css/img/menu/reset.svg">
+        </div>
+        <div id="mI1" class="setPlayers menuItem">
+          <img src="css/img/menu/players.svg">
+        </div>
+        <div id="mI2" class="setStartLife menuItem">
+          <img src="css/img/player-icons/life.svg">
+        </div>
+        <div id="mI3" class="dice menuItem">
+          <img src="css/img/menu/dice-icon.svg">
+        </div>
+        <div id="mI4" class="dayNnight menuItem">
+          <img src="css/img/menu/dayNnight.svg">
+        </div>
+        <div id="mI5" class="monarchm menuItem">
+          <img src="css/img/player-icons/crown.svg">
+        </div>
+        <div id="mI6" class="initiativem menuItem">
+          <img src="css/img/player-icons/sword.svg">
+        </div>
+        <div id="mI7" class="settings menuItem">
+          <img src="css/img/menu/Settings.svg">
+        </div>
+      </div>
+      <button class="menuBtn" onclick="this.parentElement.classList.toggle('closed')">
+        <img src="css/img/menu/flame-magic.svg">
+      </button>
+    </div>
+
+  </body>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/jquery-3.5.0.js"></script>
+  <script src="js/main.js"></script>
+</html>

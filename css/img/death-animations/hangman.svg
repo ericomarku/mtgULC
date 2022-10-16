@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<svg data-name="Layer 1" height="24" id="Layer_1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <title/>
+  <style>
+    .hangman {
+      transform-origin: calc(calc(16.25 / 24) * 100%) calc(calc(3 / 24) * 100%);
+      animation: swaying 5s ease-in-out alternate infinite;
+    }
+    @keyframes swaying {
+      0%, 100% {
+        transform: rotate(-5deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+  </style>
+  <g class="hangman">
+    <rect class="rope" height="8" style="fill:#b3c1c9" width="0.5" x="15.5" y="3"/>
+    <path class="head" d="M15.9999,12l-1.6-1.2,1.8-2.4a1,1,0,0,1,1.4-.2h0a.99992.99992,0,0,1,.2,1.4Z" style="fill:#4b5661"/>
+    <path class="upperBody" d="M15,10h2a2,2,0,0,1,2,2v2a1,1,0,0,1-1,1H14a1,1,0,0,1-1-1V12A2,2,0,0,1,15,10Z" style="fill:#4b5661"/>
+    <path class="rightLeg" d="M14.75,18.75h0A.75.75,0,0,1,14,18V12h1.5v6A.75.75,0,0,1,14.75,18.75Z" style="fill:#4b5661"/>
+    <path class="leftLeg" d="M17.25,18.75h0A.75.75,0,0,1,16.5,18V12H18v6A.75.75,0,0,1,17.25,18.75Z" style="fill:#4b5661"/>
+    <rect class="pelvis" height="2" style="fill:#4b5661" width="2" x="15" y="14"/>
+  </g>
+  <g class="gallows">
+    <rect height="1.9997" style="fill:#637180" transform="translate(-1.77082 9.22487) rotate(-45)" width="7.77817" x="6.36091" y="5.75015"/>
+    <rect height="19" style="fill:#637180" width="3" x="6" y="3"/>
+    <rect height="3" style="fill:#738394" width="12" x="6" y="2"/>
+  </g>
+</svg>

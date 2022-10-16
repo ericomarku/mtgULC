@@ -1,0 +1,287 @@
+
+.menu {
+  position: absolute;
+  top: calc(100% * .5);
+  left: calc(100% * .5);
+}
+
+.menuBtn, .menuItems {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  border: none;
+  transform: translate(-50%, -50%);
+}
+
+.menuBtn {
+  width: 10vmin;
+  height:10vmin;
+  background-color: #333;
+  background-image: radial-gradient(#D6AD60, darkred 90%);
+  outline: solid #111 1vmin !important;
+  padding: 0;
+}
+
+.menuBtn:active {
+  background-image: radial-gradient(#D6AD60 50%, darkred 90%);
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.menuBtn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  pointer-events: none;
+  animation: menuRotate 45s linear infinite;
+}
+
+.menuItems {
+  width: 38vmin;
+  height: 38vmin;
+  background-color: #222;
+  transition: width .3s ease-in-out, height .3s ease-in-out;
+}
+
+.rotate {
+  animation: menuRotate 120s linear infinite reverse;
+}
+
+@keyframes menuRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0turn);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.menuItems div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12vmin;
+  height: 12vmin;
+  border-radius: 50%;
+  background: none;
+}
+
+.menuItems img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  opacity: .7;
+}
+
+.menuItem img {
+  opacity: .7;
+}
+
+.menuItem:active img {
+  opacity: 1;
+}
+
+#mI0 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 0))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .0s;
+}
+#mI1 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 1))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .05s;
+}
+#mI2 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 2))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .1s;
+}
+#mI3 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 3))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .15s;
+}
+#mI4 {
+  opacity: .3;
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 4))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .2s;
+}
+#mI5 {
+  opacity: .3;
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 5))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .25s;
+}
+#mI6 {
+  opacity: .3;
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 6))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .3s;
+}
+#mI7{
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 7))
+    translateY(-12vmin) rotate(-.5turn);
+  transition: transform .3s ease-in-out .35s;
+}
+
+.closed .menuItems {
+  width: 10vmin;
+  height: 10vmin;
+  transition-delay: .35s;
+}
+
+/* .closed .menuItem {
+  transform: translate(-50%, -50%) !important;
+} */
+
+.closed #mI0 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 2))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .35s;
+}
+.closed #mI1 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 3))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .3s;
+}
+.closed #mI2 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 4))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .25s;
+}
+.closed #mI3 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 5))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .2s;
+}
+.closed #mI4 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 6))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .15s;
+}
+.closed #mI5 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 7))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .1s;
+}
+.closed #mI6 {
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 8))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .05s;
+}
+.closed #mI7{
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(calc(1turn / 8) * 9))
+    rotate(-.5turn);
+  transition: transform .3s ease-in-out .0s;
+}
+
+.skyflame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: none;
+  border-radius: 1.5vmin;
+}
+
+.sky {
+  position: fixed;
+  pointer-events: none;
+  width: 100vmax;
+  min-height: 100vmin;
+  z-index: -1;
+  transform-origin: top left;
+  mix-blend-mode: multiply;
+  filter: grayscale();
+  background: none;
+}
+
+.day {
+  opacity: .7;
+  background: url('img/overlay/day.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vmax 100vmin;
+}
+
+.night {
+  /* filter: grayscale(); */
+  opacity: .8;
+  background: url('img/overlay/night.png');
+  background-repeat: no-repeat;
+  background-size: 130vmax 140vmin;
+  background-position: -35vmin -10vmin;
+}
+
+.p1 .sky {
+  top: calc(100% + 2.8vmin);
+  left: calc(100% + 2.8vmin);
+  transform: rotate(180deg);
+}
+
+.p2 .sky {
+  top: calc(100% + 2.8vmin);
+  left: calc(calc(100% + 2.8vmin) * 2);
+  transform: rotate(180deg);
+}
+
+.p3 .sky {
+  top: calc(100% + 2.8vmin);
+  left: calc(calc(100% + 2.8vmin) * 3);
+  transform: rotate(180deg);
+}
+
+.p4 .sky {
+  top: calc(-100% - 5.6vmin);
+  left: -2.8vmin;
+}
+
+.p5 .sky {
+  top: calc(-100% - 5.6vmin);
+  left: calc(-100% - 5.6vmin);
+}
+
+.p6 .sky {
+  top: calc(-100% - 5.6vmin);
+  left: calc(-200% - 8.4vmin);
+}

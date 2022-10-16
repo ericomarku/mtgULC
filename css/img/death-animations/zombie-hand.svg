@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<svg data-name="Layer 1" height="24" id="Layer_1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <title/>
+  <style>
+    .hand {
+      transform-origin: 50% 100%;
+      position: relative;
+      animation: sway 6s ease-in-out alternate infinite;
+    }
+
+    @keyframes sway {
+      0%, 100% {
+        transform: rotate(-2.5deg);
+      }
+      50% {
+        transform: rotate(2.5deg);
+      }
+    }
+
+    .f1 {
+      transform-origin: calc(calc(8 / 24) * 100%) calc(calc(14 / 24) * 100%);
+      animation: twitch 7s ease-in-out alternate infinite;
+      animation-delay: 4s;
+    }
+    .f2 {
+      transform-origin: calc(calc(9 / 24) * 100%) calc(calc(11 / 24) * 100%);
+      animation: twitch 19s ease-in-out alternate infinite;
+      animation-delay: 13s;
+    }
+    .f3 {
+      transform-origin: calc(calc(12 / 24) * 100%) calc(calc(11 / 24) * 100%);
+      animation: twitch 13s ease-in-out alternate infinite;
+      animation-delay: 7s;
+    }
+    .f4 {
+      transform-origin: calc(calc(15 / 24) * 100%) calc(calc(11 / 24) * 100%);
+      animation: twitch 16s ease-in-out alternate infinite;
+      animation-delay: 10s;
+    }
+    .f5 {
+      transform-origin: calc(calc(15 / 24) * 100%) calc(calc(13 / 24) * 100%);
+      animation: twitch 10s ease-in-out alternate infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes twitch {
+      0%, 49%, 51%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(7deg);
+      }
+    }
+  </style>
+  <!-- <circle class="moon" cx="7" cy="7" r="5" style="fill:#ffe6ba"/> -->
+  <g class="hand">
+    <rect class="rist" height="5.9999" style="fill:#4080c2" width="5.9998" x="8.99989" y="14.9996"/>
+    <path class="f1" d="M8.99989,16.9996l-2-2-2.7073-4.6932L5.4,5.7572l.23209.0706a1.33718,1.33718,0,0,1,.9473,1.3171l-.072,2.5482,2.4925,2.3066Z" style="fill:#4c9ae8"/>
+    <path class="f2" d="M9.99979,10.9998H7.99989l.0298-5.2426.9999-3.9999.4362.2208a1.32838,1.32838,0,0,1,.7255,1.2737l-.1915,2.8711Z" style="fill:#4c9ae8"/>
+    <path class="f3" d="M12.99979,10.9998h-2V5.6972l2.1679-3.2519.3807.5075a1.38925,1.38925,0,0,1,.1941,1.3087l-.7427,2.0411Z" style="fill:#4c9ae8"/>
+    <path class="f4" d="M15.99969,11.9997h-2V6.5858l2.2929-2.2929.228.304a1.41691,1.41691,0,0,1,.1382,1.474l-.6591,1.343Z" style="fill:#4c9ae8"/>
+    <path class="f5" d="M15.70669,14.7067l-1.414-2.1653,3.2929-2.5416h2.114v.2648a.99867.99867,0,0,1-.702.9535l-.5839.1816Z" style="fill:#4c9ae8"/>
+    <path d="M13.99969,16.9996H8.99989l-1-4.9999V9.8998h7.9998v5.0998A2,2,0,0,1,13.99969,16.9996Z" style="fill:#4c9ae8"/>
+  </g>
+  <path class="ground" d="M18.99959,21.9995H5s.99989-3,6.99979-3S18.99959,21.9995,18.99959,21.9995Z" style="fill:#738394"/>
+  <!-- <circle class="tool" cx="15" cy="13" r="1" style="fill:#ff0000"/> -->
+</svg>

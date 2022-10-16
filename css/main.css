@@ -1,0 +1,1174 @@
+
+:root {
+  --N: #888;
+
+  --W: #fffbd5;
+  --U: #aae0fa;
+  --B: #6b625f;
+  --R: #f9aa8f;
+  --G: #9bd3ae;
+
+  --WU: linear-gradient(135deg ,var(--W) 0% 30%, var(--U) 70% 100%);
+  --WB: linear-gradient(135deg ,var(--W) 0% 30%, var(--B) 70% 100%);
+  --WR: linear-gradient(135deg ,var(--W) 0% 30%, var(--R) 70% 100%);
+  --WG: linear-gradient(135deg ,var(--W) 0% 30%, var(--G) 70% 100%);
+
+  --UB: linear-gradient(135deg ,var(--U) 0% 30%, var(--B) 70% 100%);
+  --UR: linear-gradient(135deg ,var(--U) 0% 30%, var(--R) 70% 100%);
+  --UG: linear-gradient(135deg ,var(--U) 0% 30%, var(--G) 70% 100%);
+
+  --BR: linear-gradient(135deg ,var(--B) 0% 30%, var(--R) 70% 100%);
+  --BG: linear-gradient(135deg ,var(--B) 0% 30%, var(--G) 70% 100%);
+
+  --RG: linear-gradient(135deg ,var(--R) 0% 30%, var(--G) 70% 100%);
+
+  --WUB: radial-gradient(at top left,       var(--W) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--U) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--B) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --WUR: radial-gradient(at top left,       var(--W) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--U) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--R) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --WUG: radial-gradient(at top left,       var(--W) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--U) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--G) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --WBR: radial-gradient(at top left,       var(--W) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--B) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--R) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --WBG: radial-gradient(at top left,       var(--W) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--B) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--G) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --WRG: radial-gradient(at top left,       var(--W) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--R) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--G) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+
+  --UBR: radial-gradient(at top left,       var(--U) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--B) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--R) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --UBG: radial-gradient(at top left,       var(--U) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--B) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--G) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+  --URG: radial-gradient(at top left,       var(--U) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--R) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--G) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+
+  --BRG: radial-gradient(at top left,       var(--B) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at top right,      var(--R) 20%, rgba(0,0,0,0) 70%),
+         radial-gradient(at bottom center,  var(--G) 45%, rgba(0,0,0,0) 100%),
+         radial-gradient(white, white);
+
+  --WUBR: radial-gradient(at top left,      var(--W) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at top right,     var(--U) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom right,  var(--B) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom left,   var(--R) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(white, white);
+  --WUBG: radial-gradient(at top left,      var(--W) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at top right,     var(--U) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom right,  var(--B) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom left,   var(--G) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(white, white);
+  --WURG: radial-gradient(at top left,      var(--W) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at top right,     var(--U) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom right,  var(--R) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom left,   var(--G) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(white, white);
+  --WBRG: radial-gradient(at top left,      var(--W) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at top right,     var(--B) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom right,  var(--R) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom left,   var(--G) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(white, white);
+  --UBRG: radial-gradient(at top left,      var(--U) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at top right,     var(--B) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom right,  var(--R) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(at bottom left,   var(--G) 15%, rgba(0,0,0,0) 50%),
+          radial-gradient(white, white);
+
+  --WUBRG: radial-gradient(at top center,   var(--W) 15%, rgba(0,0,0,0) 50%),
+           radial-gradient(at top left,     var(--G) 15%, rgba(0,0,0,0) 50%),
+           radial-gradient(at top right,    var(--U) 15%, rgba(0,0,0,0) 50%),
+           radial-gradient(at bottom right, var(--B) 15%, rgba(0,0,0,0) 50%),
+           radial-gradient(at bottom left,  var(--R) 15%, rgba(0,0,0,0) 50%),
+           radial-gradient(white, white);
+}
+
+@font-face {
+  font-family: MTG-font-caps;
+  src: url("font/beleren/Beleren2016SmallCaps-Bold.ttf");
+}
+
+@font-face {
+  font-family: MTG-font;
+  src: url("font/beleren/Beleren2016-Bold.ttf");
+}
+
+body {
+  font-family: MTG-font-caps;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.background {
+  width: 100vmax;
+  height: 100vmin;
+  background-color: #333;
+  background-image: url("img/player-icons/groundtexture.jpg");
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+
+* {
+    transform-style: preserve-3d;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+/* This is the player Grid. */
+
+.playersGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 5.6vmin);
+  height: calc(100% - 5.6vmin);
+  display: grid;
+  justify-content: center;
+  grid-gap: 2.8vmin;
+  padding: 2.8vmin;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+.playerCard {
+  position: relative;
+  height: calc(50vmin - 4.2vmin);
+  perspective: 1000px;
+  background-color: transparent;
+  filter: drop-shadow(0vmin 0vmin 3vmin #000);
+  z-index: 1;
+}
+
+.p1 .CMD-DMG, .p2 .CMD-DMG, .p3 .CMD-DMG {
+  transform: rotate(.5turn);
+}
+
+.p1 .CMD-DMG .CMD, .p2 .CMD-DMG .CMD, .p3 .CMD-DMG .CMD {
+  transform: rotate(.5turn);
+}
+
+.p1 .CMD-DMG .p4 div,
+.p1 .CMD-DMG .p5 div,
+.p1 .CMD-DMG .p6 div,
+.p2 .CMD-DMG .p4 div,
+.p2 .CMD-DMG .p5 div,
+.p2 .CMD-DMG .p6 div,
+.p3 .CMD-DMG .p4 div,
+.p3 .CMD-DMG .p5 div,
+.p3 .CMD-DMG .p6 div {
+  transform: translateZ(3vmin) rotate(.5turn);
+}
+
+.p1, .p2, .p3 {
+  transform: rotate(.5turn);
+}
+
+.numP2 > .p4 {
+  transform: translateY(0);
+}
+
+.numP6, .numP6 .CMD-DMG {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.numP5, .numP5 .CMD-DMG {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.numP5 > .p1, .numP5 .CMD-DMG > .p1 {
+  grid-column: 1 / 3;
+}
+
+.numP5 > .p2, .numP5 .CMD-DMG > .p2 {
+  grid-column: 3 / 5;
+}
+
+.numP5 > .p3, .numP5 .CMD-DMG > .p3 {
+  grid-column: 5 / 7;
+}
+
+.numP5 > .p4, .numP5 .CMD-DMG > .p4 {
+  grid-column: 1 / 4;
+}
+
+.numP5 > .p5, .numP5 .CMD-DMG > .p5 {
+  grid-column: 4 / 7;
+}
+
+.numP5 > .p6, .numP5 .CMD-DMG > .p6 {
+  display: none;
+}
+
+
+.numP4, .numP4 .CMD-DMG  {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.numP4 > .p6, .numP4 .CMD-DMG > .p6, .numP4 > .p3, .numP4 .CMD-DMG > .p3 {
+  display: none;
+}
+
+
+.numP3 {
+  width: calc(calc(calc(calc(100vmax - calc(2.8vmin * 3)) * 2) / 3) + calc(100vmin - 5.6vmin));
+}
+
+.numP3 > .p2 {
+  width: calc(100vmin - 5.6vmin);
+  height: calc(calc(calc(100vmax) * 1) / 3) !important;
+  transform-origin: top left;
+  transform: translateY(calc(100vmin - 5.6vmin)) rotate(-.25turn) !important;
+}
+
+.numP3, .numP3 .CMD-DMG {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.numP3 > .p2 .CMD-DMG{
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.numP3 > .p1, .numP3 .CMD-DMG > .p1 {
+  grid-column: 1 / 3;
+}
+
+.numP3 > .p2, .numP3 .CMD-DMG > .p2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+  height: 100%;
+}
+
+.numP3 > .p4, .numP3 .CMD-DMG > .p4 {
+  grid-column: 1 / 3;
+}
+
+.numP3 > .p2 .CMD-DMG > .p1 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 6;
+  height: 10vmax
+}
+.numP3 > .p2 .CMD-DMG > .p2 {
+  grid-row: 1 / 3;
+  grid-column: 1 / 3;
+  height: 100%;
+  height: 6.6vmax
+}
+.numP3 > .p2 .CMD-DMG > .p4 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 6;
+  height: 10vmax
+}
+
+.numP3 > .p6, .numP3 .CMD-DMG > .p6, .numP3 > .p5, .numP3 .CMD-DMG > .p5, .numP3 > .p3, .numP3 .CMD-DMG > .p3 {
+  display: none;
+}
+
+
+.numP2 {
+  width: calc(100vmin - 5.6vmin);
+  height: calc(100vmax - 5.6vmin);
+  transform-origin: top left;
+  transform: translateY(100vmin) rotate(-.25turn);
+}
+
+.numP2, .numP2 .CMD-DMG {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.numP2 .CMD-DMG .CMD{
+  height: 12vmax;
+}
+
+.numP2 .CMD-DMG .CMD p {
+  font-size: 7vmax !important;
+}
+
+.numP2 > .playerCard {
+  height: calc(50vmax - 4.2vmin);
+}
+
+.numP2 > .p6, .numP2 .CMD-DMG > .p6, .numP2 > .p5, .numP2 .CMD-DMG > .p5, .numP2 > .p3, .numP2 .CMD-DMG > .p3, .numP2 > .p2, .numP2 .CMD-DMG > .p2 {
+  display: none;
+}
+
+
+/* This is the playerCard. */
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+  transform-origin: top right;
+}
+
+/* .playerGrid, .playerGrid * {
+  transform-style: preserve-3d;
+} */
+
+.flipped {
+  transform: translateX(-100%) rotateZ(-.5turn) rotateX(-.5turn);
+}
+
+.dead .flipped {
+  transform: translateX(0) rotateZ(0) rotateX(0);
+}
+
+/* This is the flip Btn. */
+
+.flipBtn {
+  position: absolute;
+  bottom: 3vmin;
+  left: 50%;
+  height: 6vmin;
+  transform: translateX(-50%) translateZ(1vmin);
+  background: none;
+  border: none;
+}
+
+.flipBtn > img {
+  height: 100%;
+}
+
+.flipBtn:active > img {
+  transform: translateZ(1vmin);
+}
+
+.flipBtn::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  background: white;
+  filter: blur(3vmax);
+  transition: opacity 200ms ease-in-out;
+}
+
+.flipBtn:active::before {
+  opacity: 0.3;
+}
+
+/* This is the front of the playerCard. */
+
+.card-face-front, .card-face-back, .card-face-dead {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5vmin;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* overflow: hidden; */
+}
+
+.dead .card-face-front {
+  display: none;
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6 {
+  background: black;
+  background-color: var(--N);
+  background-image: var(--N);
+  transition: background-color .5s;
+}
+
+.card-face-front::before, .card-face-back::before, .card-face-dead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("img/player-icons/paper-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5vmin;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: invert() grayscale();
+  pointer-events: none;
+}
+
+.card-face-front::after, .card-face-back::after, .card-face-dead::after {
+  content: "";
+  position: absolute;
+  top: 2vmin;
+  left: 2vmin;
+  bottom: 2vmin;
+  right: 2vmin;
+  border: solid #fff 0.3vmin;
+  transform: translateZ(4vmin);
+  pointer-events: none;
+}
+
+/* this is the life counter */
+
+.lifeCount {
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+}
+
+.lIcon {
+  pointer-events: none;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 5vmin;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-50%) translateZ(4vmin);
+}
+
+.lValue {
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 20vmin;
+  transform: translate3d(-50%, -50%, 5vmin);
+  font-size: 20vmin;
+  text-align: center;
+}
+
+.lChange {
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  font-size: 3.7vmin;
+  height: 3.7vmin;
+  transform: translateY(-50%) translateZ(4vmin);
+  align-self: end;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .5s;
+  transition-delay: 3s;
+}
+
+.showChange {
+  opacity: 0.6;
+  transition: opacity 0s;
+  transition-delay: 0s;
+}
+
+/* This is the add and sub life buttons */
+
+.lifeBtn {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  width: 35%;
+  background: none;
+  border: none;
+}
+
+.lifeBtn > img {
+  position: absolute;
+  top: 50%;
+  width: 6vmin;
+  transform: translateY(-50%) scale(1) translateZ(3vmin);
+}
+
+.lifeBtn:active > img {
+  transform: translateY(-50%) scale(0.9) translateZ(3vmin);
+}
+
+.addLbtn {
+  right: 0%;
+}
+
+.addLbtn > img {
+  left: 7vmin;
+}
+
+.addLbtn::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  right: 0;
+  width: 120%;
+  opacity: 0;
+  background: white;
+  filter: blur(4vmax);
+  transition: opacity 200ms ease-in-out;
+  pointer-events: none;
+}
+
+.addLbtn:active::before {
+  opacity: 0.3;
+}
+
+.subLbtn {
+  left: 0%;
+}
+
+.subLbtn > img {
+  right: 7vmin;
+}
+
+.subLbtn::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 120%;
+  opacity: 0;
+  background: white;
+  filter: blur(4vmax);
+  transition: opacity 200ms ease-in-out;
+  pointer-events: none;
+}
+
+.subLbtn:active::before {
+  opacity: 0.3;
+}
+
+/* This is the Poison counter. */
+
+.poisonContainer {
+  position: absolute;
+  top: 5vmin;
+  right: 7vmin;
+  width: 4vmin;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: scaleX(0.9) translateZ(2vmin);
+  transition: opacity .5s;
+}
+
+.poisonOn, .card-face-back .poisonContainer {
+  opacity: 0.8;
+  pointer-events: auto;
+}
+
+.poisonContainer > img {
+  filter: invert();
+}
+
+.poisonContainer > p {
+  margin: 0;
+  padding: 0;
+  font-size: 4vmin;
+  transform: scaleX(0.9) translateZ(-1vmin);
+}
+
+/* This is the statues overview. */
+
+.statusContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 10vmin;
+  transform: translateX(-50%) translateZ(0vmin);
+  display: flex;
+  justify-content: center;
+}
+
+.statusContainer > div {
+  height: 10vmin;
+  overflow: hidden;
+}
+
+.monarch, .initiative {
+  width: 0;
+  opacity: 0;
+  /* border-radius: 50%; */
+  /* pointer-events: none; */
+  pointer-events: pointer;
+  transition: opacity .5s, width .5s;
+  position: relative;
+}
+
+.monarch img, .initiative img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.monarch-icon {
+  width: 60%;
+}
+
+.initiative-icon {
+  width: 60%;
+}
+
+.active, .card-face-back .monarch, .card-face-back .initiative{
+  width: 10vmin;
+  height: 10vmin;
+  opacity: 0.3;
+}
+
+.mOn, .iOn {
+  opacity: 0.8 !important;
+  filter: drop-shadow(0 0 .1vmin white);
+}
+
+/* This is the color selection */
+
+.colorSelect {
+  position:relative;
+  width:2.5vmax;
+  height:2.5vmax;
+  border-radius:50%;
+  margin: 2vmax;
+  opacity: 0.6;
+  z-index: 2;
+  transform: translateZ(4vmin);
+  transition: width .5s, height .5s, margin .5s, transform .5s, opacity .5s;
+}
+
+.responsive {
+  width: 8vmax;
+  height: 8vmax;
+  margin: 4vmax;
+  opacity: 1;
+  transform: translateZ(7vmin);
+}
+
+.responsive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(4vmin);
+}
+
+.colorUnselect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  transform: translateZ(6vmin);
+  background: none;
+}
+
+.colorContainer {
+  display: block;
+  position: absolute;
+  top: 50;
+  right: 50;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border: solid #fff .3vmax;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.responsive .colorContainer {
+  pointer-events: auto;
+}
+
+.W {
+  transform: translateY(-40%) scale(0.25);
+} .responsive .W {
+  transform: translateY(-40%) scale(0.35);
+}
+
+.U {
+  transform: rotate(0.2turn) translateY(-40%) scale(0.25);
+} .responsive .U {
+  transform: rotate(0.2turn) translateY(-40%) scale(0.35);
+}
+
+.B {
+  transform: rotate(0.4turn) translateY(-40%) scale(0.25);
+} .responsive .B {
+  transform: rotate(0.4turn) translateY(-40%) scale(0.35);
+}
+
+.R {
+  transform: rotate(0.6turn) translateY(-40%) scale(0.25);
+} .responsive .R {
+  transform: rotate(0.6turn) translateY(-40%) scale(0.35);
+}
+
+.G {
+  transform: rotate(0.8turn) translateY(-40%) scale(0.25);
+} .responsive .G {
+  transform: rotate(0.8turn) translateY(-40%) scale(0.35);
+}
+
+.colorContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: opacity(0) grayscale();
+  transition: filter .5s;
+  pointer-events: none;
+}
+
+.responsive .checkmark {
+  pointer-events: auto;
+  filter: opacity(.3) grayscale();
+}
+
+.colorContainer input:checked ~ .checkmark {
+  filter: opacity(1);
+}
+
+.W > .checkmark {
+  background-image: url("img/player-icons/MTG_(W).svg");
+  background-size: cover;
+}
+
+.U > .checkmark {
+  background-image: url("img/player-icons/MTG_(U).svg");
+  background-size: cover;
+  transform: rotate(-0.2turn);
+}
+
+.B > .checkmark {
+  background-image: url("img/player-icons/MTG_(B).svg");
+  background-size: cover;
+  transform: rotate(-0.4turn);
+}
+
+.R > .checkmark {
+  background-image: url("img/player-icons/MTG_(R).svg");
+  background-size: cover;
+  transform: rotate(-0.6turn);
+}
+
+.G > .checkmark {
+  background-image: url("img/player-icons/MTG_(G).svg");
+  background-size: cover;
+  transform: rotate(-0.8turn);
+}
+
+/* This it the back of the playerCard. */
+
+.card-face-back {
+  background: black;
+  border-radius: 1.5vmin;
+  transform: rotateY(0.5turn);
+}
+
+.card-face-back > .flipBtn img {
+  transform: rotateY(0.5turn) ;
+}
+
+.CMD-DMG-Container {
+  position: absolute;
+  top: 42.5%;
+  left: 50%;
+  width: 50%;
+  transform: translate3d(-50%, -50%, 5px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.CMD-DMG {
+  text-align: center;
+  display: grid;
+  grid-gap: 1vmin;
+}
+
+.CMD {
+  position: relative;
+  height: 10vmin;
+  /* border: solid #777 .1vmin; */
+}
+
+.CMD div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  border-radius: 1vmin;
+  transform: translateZ(3vmin);
+}
+
+.CMD p {
+  font-size: 6vmin;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -45%, 5vmin);
+}
+
+.p4 .CMD-DMG .p1 p,
+.p4 .CMD-DMG .p2 p,
+.p4 .CMD-DMG .p3 p,
+.p5 .CMD-DMG .p1 p,
+.p5 .CMD-DMG .p2 p,
+.p5 .CMD-DMG .p3 p,
+.p6 .CMD-DMG .p1 p,
+.p6 .CMD-DMG .p2 p,
+.p6 .CMD-DMG .p3 p {
+  transform: translate3d(-50%, -55%, 5vmin) rotate(.5turn);
+}
+
+.CMD button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  border-radius: 1vmin;
+  transform: translateZ(4vmin);
+  background-color: none;
+  border: none;
+}
+
+.CMD button img {
+  height: 100%;
+  /* filter: invert(); */
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate3D(-50%, -50%, 3vmin);
+}
+
+.header {
+  padding: 1vmin;
+}
+
+.header p {
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+.header .main {
+  font-size: 4.3vmin;
+  transform: translateZ(5vmin);
+}
+
+.header .under {
+  font-size: 3vmin;
+  transform: translateZ(3vmin);
+}
+
+.deathBtn img {
+  pointer-events: none;
+}
+
+.concede {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 10vmin);
+  width: 90%;
+  height: 55%;
+  background-image: url("img/player-icons/concede.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 4vmin;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s;
+}
+
+.concede p {
+  font-family: MTG-font;
+  margin: 0;
+  padding: 0;
+}
+
+.concede button {
+  font-family: MTG-font-caps;
+  font-size: 4vmin;
+  padding: none;
+  background: none;
+  border: none;
+  color: white;
+  transform: scale(1.3);
+}
+
+.defeat:active {
+  color: darkred;
+  /* filter: drop-shadow(0 0 3vmin black); */
+}
+
+.defiant:active {
+  color: var(--G);
+  /* filter: drop-shadow(0 0 3vmin white); */
+}
+
+.card-face-back > .statusContainer {
+  position: absolute;
+  top: 50%;
+  left: 2vmin;
+  height: 100%;
+  width: 20%;
+  max-width: 20.5%;
+  transform: translateY(-50%);
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.card-face-back > .statusContainer div {
+  transform: translateZ(5vmin);
+}
+
+.card-face-back > .statusContainer p {
+  transform: translateZ(3vmin);
+}
+
+/* this it the dead card face. */
+
+.card-face-dead {
+  pointer-events: none;
+  display: none;
+  background: black;
+  border-radius: 1.5vmin;
+  text-align: center;
+  text-shadow: 0 0 1vmin black;
+}
+
+.dead .card-face-dead {
+  display: block;
+}
+
+.card-face-dead h1 {
+  font-size: 10vmin;
+  margin-bottom: 0;
+  width: 90%;
+  margin-left: 5%;
+  opacity: 0.6;
+  color: darkred;
+}
+
+.card-face-dead p {
+  font-family: MTG-font;
+  font-size: 5vmin;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 80%;
+  margin-left: 10%;
+  opacity: 0.6;
+}
+
+.death-ani {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  border-radius: 1.5vmin;
+  overflow: hidden;
+  filter: grayscale();
+}
+
+.death-ani img {
+  position: absolute;
+}
+
+.hangman img {
+  top: 0;
+  left: 0;
+  height: 110%;
+  transform: translate(-30%);
+}
+
+.zombie-head img {
+  bottom: 0;
+  right: 0;
+  height: 80%;
+  transform-origin: bottom center;
+  animation: rocking 5s ease-in-out alternate infinite;
+}
+@keyframes rocking {
+  0%, 100% {
+    transform: rotate(0deg) translate(25%, 15%);
+  }
+  50% {
+    transform: rotate(-5deg) translate(25%, 15%);
+  }
+}
+
+.ghost img {
+  bottom: 0;
+  height: 80%;
+  left: 0;
+  filter: invert();
+  animation: orbit 12s linear infinite;
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0turn) translateX(5%) rotate(.0turn) translateY(-8%);
+  }
+  25% {
+    transform: rotate(-.27turn) translateX(4%) rotate(.25turn) translateY(-8%);
+  }
+  50% {
+    transform: rotate(-.5turn) translateX(5%) rotate(.5turn) translateY(-8%);
+  }
+  75% {
+    transform: rotate(-.73turn) translateX(6%) rotate(.75turn) translateY(-8%);
+  }
+  100% {
+    transform: rotate(-1turn) translateX(5%) rotate(1turn) translateY(-8%);
+  }
+}
+
+.zombie-hand img {
+  bottom: -10%;
+  left: 0;
+  height: 80%;
+}
+.zombie-hand .moon {
+  transform-origin: 50% 150%;
+  transform: rotate(-30deg);
+  animation: mooncycle 30s linear infinite;
+}
+@keyframes mooncycle {
+  0% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    transform: rotate(85deg);
+  }
+  100% {
+    transform: rotate(85deg);
+  }
+
+}
+
+.skull img {
+  top: 20%;
+  left: 50%;
+  height: 80%;
+  animation: roll 5s ease-in-out alternate infinite;
+}
+@keyframes roll {
+  0%, 100% {
+    transform: translateX(-70%) rotate(-10deg);
+  }
+  50% {
+    transform: translateX(-30%) rotate(10deg);
+  }
+}
+
+.zombie img {
+  bottom: -50%;
+  left: 0;
+  height: 140%;
+  animation: zombie-shuffle 25s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+@keyframes zombie-shuffle {
+  0% {
+    transform: translateX(-100%) rotate(7deg);
+    left: 0%;
+  }
+  10% {
+    transform: translateX(-90%) rotate(-7deg);
+    left: 10%;
+  }
+  20% {
+    transform: translateX(-80%) rotate(7deg);
+    left: 20%;
+  }
+  30% {
+    transform: translateX(-70%) rotate(-7deg);
+    left: 30%;
+  }
+  40% {
+    transform: translateX(-60%) rotate(7deg);
+    left: 40%;
+  }
+  50% {
+    transform: translateX(-50%) rotate(-7deg);
+    left: 50%;
+  }
+  60% {
+    transform: translateX(-40%) rotate(7deg);
+    left: 60%;
+  }
+  70% {
+    transform: translateX(-30%) rotate(-7deg);
+    left: 70%;
+  }
+  80% {
+    transform: translateX(-20%) rotate(7deg);
+    left: 80%;
+  }
+  90% {
+    transform: translateX(-10%) rotate(-7deg);
+    left: 90%;
+  }
+  100% {
+    transform: translateX(0%) rotate(7deg);
+    left:100%;
+  }
+}
