@@ -148,6 +148,11 @@ $(document).ready(function(){
   $('.settings').click(function () {
     console.log('ready');
     $(document).toggleFullScreen(true)
+    screen.orientation.lock("landscape").then(function() {
+		    alert('Locked');
+	  }).catch(function(error) {
+		    alert(error);
+	  });
   });
 
   screen.orientation.addEventListener('change', function() {
@@ -156,11 +161,7 @@ $(document).ready(function(){
 
   function setup() {
 
-    screen.orientation.lock("landscape").then(function() {
-		    alert('Locked');
-	  }).catch(function(error) {
-		    alert(error);
-	  });
+
 
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
     let playerCards = $('.playerCard');
