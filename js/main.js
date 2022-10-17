@@ -150,6 +150,7 @@ $(document).ready(function(){
     if (fs == "off") {
       $(document).fullScreen(true)
       screen.orientation.lock("landscape-primary")
+      navigator.wakeLock.request('screen')
     }
   });
 
@@ -166,8 +167,6 @@ $(document).ready(function(){
   // let screenLock = await navigator.wakeLock.request('screen');
 
   function setup() {
-
-
 
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
     let playerCards = $('.playerCard');
