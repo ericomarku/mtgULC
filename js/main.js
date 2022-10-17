@@ -148,7 +148,7 @@ $(document).ready(function(){
   $('.settings').click(function () {
     console.log('ready');
     $(document).toggleFullScreen(true)
-    screen.orientation.lock("landscape")
+    screen.orientation.lock("landscape-primary")
   });
 
   screen.orientation.addEventListener('change', function() {
