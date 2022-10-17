@@ -148,11 +148,7 @@ $(document).ready(function(){
   $('.settings').click(function () {
     console.log('ready');
     $(document).toggleFullScreen(true)
-    screen.orientation.lock("landscape").then(function() {
-		    alert('Locked');
-	  }).catch(function(error) {
-		    alert(error);
-	  });
+    screen.orientation.lock("landscape")
   });
 
   screen.orientation.addEventListener('change', function() {
