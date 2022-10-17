@@ -150,9 +150,17 @@ $(document).ready(function(){
     $(document).toggleFullScreen(true)
   });
 
+  screen.orientation.addEventListener('change', function() {
+	   console.log('Current orientation is ' + screen.orientation.type);
+  });
+
   function setup() {
 
-    screen.orientation.lock("landscape")
+    screen.orientation.lock("landscape").then(function() {
+		    alert('Locked');
+	  }).catch(function(error) {
+		    alert(error);
+	  });
 
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
     let playerCards = $('.playerCard');
