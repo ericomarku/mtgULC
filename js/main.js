@@ -145,10 +145,12 @@ $(document).ready(function(){
 
   setup();
 
-  $('.settings').click(function () {
-    console.log('ready');
-    $(document).toggleFullScreen(true)
-    screen.orientation.lock("landscape-primary")
+  $(document).click(function () {
+    let fs = $(document).fullScreen() ? "on" : "off";
+    if (fs == "off") {
+      $(document).fullScreen(true)
+      screen.orientation.lock("landscape-primary")
+    }
   });
 
   screen.orientation.addEventListener('change', function() {
@@ -284,7 +286,7 @@ $(document).ready(function(){
       }
     }
     updateLocalStorage();
-    location.reload();
+    setup();
   }
   function changePlayers() {
     let newPlayers = gameState[6][0] + 1
