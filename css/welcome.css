@@ -1,0 +1,13 @@
+.welcome {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: red;
+}
+
+:fullscreen .welcome {
+  display: none;
+}

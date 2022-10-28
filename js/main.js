@@ -158,10 +158,10 @@ $(document).ready(function(){
 	   console.log('Current orientation is ' + screen.orientation.type);
   });
 
-  let screenLock;
-  navigator.wakeLock.request('screen').then(lock => {
-    screenLock = lock;
-  });
+  // let screenLock;
+  // navigator.wakeLock.request('screen').then(lock => {
+  //   screenLock = lock;
+  // });
 
   // Or you can make an await call
   // let screenLock = await navigator.wakeLock.request('screen');
