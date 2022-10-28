@@ -1,13 +1,18 @@
 .welcome {
   position: fixed;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: red;
+  background: #111;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
 }
 
 :fullscreen .welcome {
-  display: none;
+  opacity: 0;
 }

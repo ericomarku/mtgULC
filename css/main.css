@@ -445,6 +445,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 50%;
+  pointer-events: none;
 }
 
 .lIcon {
@@ -498,7 +499,7 @@ body {
   position: absolute;
   top: 0%;
   bottom: 0%;
-  width: 35%;
+  width: 50%;
   background: none;
   border: none;
 }
@@ -519,7 +520,7 @@ body {
 }
 
 .addLbtn > img {
-  left: 7vmin;
+  left: 22vmin;
 }
 
 .addLbtn::before {
@@ -538,7 +539,7 @@ body {
 }
 
 .addLbtn:active::before {
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .subLbtn {
@@ -546,7 +547,7 @@ body {
 }
 
 .subLbtn > img {
-  right: 7vmin;
+  right: 22vmin;
 }
 
 .subLbtn::before {
@@ -565,7 +566,7 @@ body {
 }
 
 .subLbtn:active::before {
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 /* This is the Poison counter. */
