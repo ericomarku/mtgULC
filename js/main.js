@@ -264,6 +264,7 @@ $(document).ready(function(){
       }
     }
     for (var i = 0; i < maxPlayer; i++) {
+      deathCards[i].innerHTML = '';
       deathCards[i].append(deathAnimations[setDeathAnimations[i]]);
       let h1 = document.createElement('h1');
       h1.append(setDeathKinds[i])
