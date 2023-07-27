@@ -145,7 +145,7 @@ $(document).ready(function(){
 
   setup();
 
-  $(document).click(function () {
+  $(document).on('click touchstart',function () {
     let fs = $(document).fullScreen() ? "on" : "off";
     if (fs == "off") {
       $(document).fullScreen(true)
