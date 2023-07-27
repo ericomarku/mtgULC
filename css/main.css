@@ -138,6 +138,10 @@ body {
     user-select: none;
 }
 
+img, p {
+  pointer-events: none;
+}
+
 *:focus {
     outline: none !important;
 }
