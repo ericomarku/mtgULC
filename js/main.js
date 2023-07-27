@@ -118,7 +118,7 @@ $(document).ready(function(){
   }
 
 
-  flipBtns.on("touchstart", e => {
+  document.addEventListener("touchstart", e => {
     [...e.changedTouches].forEach(touch => {
       var t = $(touch.target)
       var c = t.attr('class');
