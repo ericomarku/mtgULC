@@ -122,7 +122,7 @@ $(document).ready(function(){
     [...e.changedTouches].forEach(touch => {
       var t = $(touch.target)
       var c = t.attr('class');
-      
+      console.log(c);
       if (t.hasClass('flipBtn')) {
         flipCard(t)
       }
@@ -300,6 +300,7 @@ $(document).ready(function(){
         }
       }
     }
+    poisonBtn.removeClass('poisonOn')
     updateLocalStorage();
     setup();
   }
@@ -446,6 +447,7 @@ $(document).ready(function(){
   }
   function resetPoison(el) {
     el.html(0);
+    poisonBtn.removeClass('poisonOn')
     updateLocalStorage();
   }
 
