@@ -581,12 +581,13 @@ img, p {
 
 .poisonContainer {
   position: absolute;
-  top: 5vmin;
-  right: 7vmin;
-  width: 4vmin;
+  top: 1vmin;
+  right: 1vmin;
+  width: 18vmin;
   text-align: center;
   opacity: 0;
   pointer-events: none;
+  border-bottom-left-radius: 50%;
   transform: scaleX(0.9) translateZ(2vmin);
   transition: opacity .5s;
 }
@@ -597,11 +598,14 @@ img, p {
 }
 
 .poisonContainer > img {
+  margin-top: 5vmin;
+  width: 3vmin;
   filter: invert();
 }
 
 .poisonContainer > p {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 3vmin;
   padding: 0;
   font-size: 4vmin;
   transform: scaleX(0.9) translateZ(-1vmin);
