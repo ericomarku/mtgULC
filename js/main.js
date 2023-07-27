@@ -118,6 +118,18 @@ $(document).ready(function(){
   }
 
 
+  flipBtns.on("touchstart", e => {
+    [...e.changedTouches].forEach(touch => {
+      var t = $(touch.target)
+      var c = t.attr('class');
+      console.log(c);
+      if (c == 'flipBtn') {
+        flipCard(t)
+
+      }
+    });
+
+  })
 
 
   lifeBtns.click(changeLife);
@@ -138,7 +150,7 @@ $(document).ready(function(){
   fInitiativeBtn.on('click touchstart', takeInitiative);
   bInitiativeBtn.click(toggleInitiative);
 
-  flipBtns.click(flipCard);
+  // flipBtns.click(flipCard);
 
   resetBtn.click(reset);
   setPlayersBtn.click(changePlayers);
@@ -288,6 +300,7 @@ $(document).ready(function(){
     updateLocalStorage();
     setup();
   }
+
   function changePlayers() {
     let newPlayers = gameState[6][0] + 1
     playerGrid.removeClass('numP' + gameState[6][0]).css('opacity', 0);
@@ -299,8 +312,8 @@ $(document).ready(function(){
     updateLocalStorage();
   }
 
-  function changeLife() {
-    let add = $(this).hasClass('addLbtn');
+  function changeLife(e) {
+    let add = e.hasClass('addLbtn');
     let lifeElement = $(this).parent().children('.lifeCount').children('.lValue')
     let lifeChange = $(this).parent().children('.lifeCount').children('.lChange')
     let currentLife = parseFloat(lifeElement.html());
@@ -594,8 +607,8 @@ $(document).ready(function(){
     $('.c' + p).css('background-color', newColor).css('background-image', newColor);
   }
 
-  function flipCard() {
-    let card = $(this).parent().parent();
+  function flipCard(e) {
+    let card = e.parent().parent();
     let isFlipped = card.hasClass('flipped');
     if (isFlipped) {
       card.removeClass('flipped');
