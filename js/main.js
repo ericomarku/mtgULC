@@ -122,17 +122,20 @@ $(document).ready(function(){
     [...e.changedTouches].forEach(touch => {
       var t = $(touch.target)
       var c = t.attr('class');
-      console.log(c);
-      if (c == 'flipBtn') {
+      
+      if (t.hasClass('flipBtn')) {
         flipCard(t)
-
       }
+      if (t.hasClass('lifeBtn')) {
+        changeLife(t)
+      }
+
     });
 
   })
 
 
-  lifeBtns.click(changeLife);
+  // lifeBtns.click(changeLife);
   cmdBtns.on('click mousedown touchstart mouseup mouseleave touchend', changeCmd);
 
   deathBtns.on('click touchstart', showConcede);
@@ -314,13 +317,13 @@ $(document).ready(function(){
 
   function changeLife(e) {
     let add = e.hasClass('addLbtn');
-    let lifeElement = $(this).parent().children('.lifeCount').children('.lValue')
-    let lifeChange = $(this).parent().children('.lifeCount').children('.lChange')
+    let lifeElement = e.parent().children('.lifeCount').children('.lValue')
+    let lifeChange = e.parent().children('.lifeCount').children('.lChange')
     let currentLife = parseFloat(lifeElement.html());
     let resentChange = parseFloat(lifeChange.html());
     let changeBy;
 
-    let pIndex = playerIndex($(this));
+    let pIndex = playerIndex(e);
 
     if (add) {
       changeBy = 1;

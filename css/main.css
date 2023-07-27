@@ -355,16 +355,20 @@ img, p {
 
 .flipBtn {
   position: absolute;
-  bottom: 3vmin;
+  bottom: 0;
   left: 50%;
-  height: 6vmin;
+  height: 16vmin;
+  width: 30vmin;
   transform: translateX(-50%) translateZ(1vmin);
-  background: none;
+  background:none;
   border: none;
+  border-top-left-radius: 40% 90%;
+  border-top-right-radius: 40% 90%;
 }
 
 .flipBtn > img {
-  height: 100%;
+  margin-top: 5vmin;
+  height: 6vmin;
 }
 
 .flipBtn:active > img {
