@@ -151,6 +151,7 @@ $(document).ready(function(){
   const swipeAble = document.querySelectorAll('.swipeAble');
 
   swipeAble.forEach(e => {
+    e.preventDefault();
     e.addEventListener('touchstart', handleTouchStart);
     e.addEventListener('touchmove', handleTouchMove);
   });
@@ -171,25 +172,16 @@ $(document).ready(function(){
 
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.5) {
       if (deltaX > 0) {
-        //swipe right
-        alert('right')
-      } else {
-        //swipe left
-        alert('left')
+        alert('right or left', $(this));
       }
     } else {
       if (deltaY > 0) {
-        //swipe down
-        alert('down')
-      } else {
-        //swipe up
-        alert('up')
+        alert('up or down', $(this));
       }
     }
   }
 
   document.addEventListener("touchend", e => {
-    e.preventDefault();
     [...e.changedTouches].forEach(touch => {
       var t = $(touch.target)
       var c = t.attr('class');
