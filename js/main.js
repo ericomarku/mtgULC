@@ -150,7 +150,7 @@ $(document).ready(function(){
   let touchEndY = 0;
 
 
-  playerCard.forEach(e => {
+  playerCards.forEach(e => {
     e.addEventListener('touchstart', handleTouchStart);
     e.addEventListener('touchmove', handleTouchMove);
   });
