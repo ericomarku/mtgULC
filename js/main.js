@@ -84,7 +84,6 @@ $(document).ready(function(){
   }
 
   let playerGrid = $('.playersGrid');
-  let playerCards;
   let lifeBtns = $('.lifeBtn');
   let cmdBtns = $('.CMD');
 
@@ -149,8 +148,9 @@ $(document).ready(function(){
   let touchEndX = 0;
   let touchEndY = 0;
 
+  const swipeAble = document.querySelectorAll('.swipeAble');
 
-  playerCards.forEach(e => {
+  swipeAble.forEach(e => {
     e.addEventListener('touchstart', handleTouchStart);
     e.addEventListener('touchmove', handleTouchMove);
   });
@@ -229,7 +229,7 @@ $(document).ready(function(){
   function setup() {
 
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
-    playerCards = $('.playerCard');
+    let playerCards = $('.playerCard');
 
     let lifeValues = $('.lValue');
     let cmdValues = $('.CMDValue');
