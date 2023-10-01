@@ -84,6 +84,7 @@ $(document).ready(function(){
   }
 
   let playerGrid = $('.playersGrid');
+  let playerCards;
   let lifeBtns = $('.lifeBtn');
   let cmdBtns = $('.CMD');
 
@@ -109,31 +110,6 @@ $(document).ready(function(){
 
 
   let menu = $('.menu');
-  menu.on('touchmove', moveMenu);
-  function moveMenu(e) {
-    let posX = e.touches[0].clientX
-    // let posY = e.touches[0].clientY
-    // $(this).css('left', posX).css('top', posY);
-    $(this).css('left', posX)
-  }
-
-
-  document.addEventListener("touchstart", e => {
-    [...e.changedTouches].forEach(touch => {
-      var t = $(touch.target)
-      var c = t.attr('class');
-      console.log(c);
-      if (t.hasClass('flipBtn')) {
-        flipCard(t)
-      }
-      if (t.hasClass('lifeBtn')) {
-        changeLife(t)
-      }
-
-    });
-
-  })
-
 
   // lifeBtns.click(changeLife);
   cmdBtns.on('click mousedown touchstart mouseup mouseleave touchend', changeCmd);
@@ -160,6 +136,75 @@ $(document).ready(function(){
 
   setup();
 
+  menu.on('touchmove', moveMenu);
+  function moveMenu(e) {
+    let posX = e.touches[0].clientX
+    // let posY = e.touches[0].clientY
+    // $(this).css('left', posX).css('top', posY);
+    $(this).css('left', posX)
+  }
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+
+  playerCard.forEach(e => {
+    e.addEventListener('touchstart', handleTouchStart);
+    e.addEventListener('touchmove', handleTouchMove);
+  });
+
+  function handleTouchStart(e) {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }
+
+  function handleTouchMove(e) {
+    const touch = e.touches[0]
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.5) {
+      if (deltaX > 0) {
+        //swipe right
+        alert('right')
+      } else {
+        //swipe left
+        alert('left')
+      }
+    } else {
+      if (deltaY > 0) {
+        //swipe down
+        alert('down')
+      } else {
+        //swipe up
+        alert('up')
+      }
+    }
+  }
+
+  document.addEventListener("touchend", e => {
+    e.preventDefault();
+    [...e.changedTouches].forEach(touch => {
+      var t = $(touch.target)
+      var c = t.attr('class');
+      console.log(c);
+      if (t.hasClass('flipBtn')) {
+        flipCard(t)
+      }
+      if (t.hasClass('lifeBtn')) {
+        changeLife(t)
+      }
+
+    });
+
+  })
+
   $(document).on('click touchstart',function () {
     let fs = $(document).fullScreen() ? "on" : "off";
     if (fs == "off") {
@@ -184,7 +229,7 @@ $(document).ready(function(){
   function setup() {
 
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
-    let playerCards = $('.playerCard');
+    playerCards = $('.playerCard');
 
     let lifeValues = $('.lValue');
     let cmdValues = $('.CMDValue');
