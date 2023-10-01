@@ -96,11 +96,11 @@ $(document).ready(function(){
 
   let poisonBtn = $('.poisonContainer');
 
-  let fMonarchBtn = $('.card-face-front').find('.monarch');
-  let bMonarchBtn = $('.card-face-back').find('.monarch');
-
-  let fInitiativeBtn = $('.card-face-front').find('.initiative');
-  let bInitiativeBtn = $('.card-face-back').find('.initiative');
+  // let fMonarchBtn = $('.card-face-front').find('.monarch');
+  // let bMonarchBtn = $('.card-face-back').find('.monarch');
+  //
+  // let fInitiativeBtn = $('.card-face-front').find('.initiative');
+  // let bInitiativeBtn = $('.card-face-back').find('.initiative');
 
   let flipBtns = $('.flipBtn');
 
@@ -122,11 +122,11 @@ $(document).ready(function(){
 
   poisonBtn.on('click mousedown touchstart mouseup mouseleave touchend', changePoisen);
 
-  fMonarchBtn.on('click touchstart', becomeMonarch);
-  bMonarchBtn.click(toggleMonarch);
-
-  fInitiativeBtn.on('click touchstart', takeInitiative);
-  bInitiativeBtn.click(toggleInitiative);
+  // fMonarchBtn.on('click touchstart', becomeMonarch);
+  // bMonarchBtn.click(toggleMonarch);
+  //
+  // fInitiativeBtn.on('click touchstart', takeInitiative);
+  // bInitiativeBtn.click(toggleInitiative);
 
   // flipBtns.click(flipCard);
 
@@ -147,13 +147,15 @@ $(document).ready(function(){
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
+  let preventer = false;
 
   const swipeAble = document.querySelectorAll('.swipeAble');
 
   swipeAble.forEach(e => {
-    e.preventDefault();
+    e.preventDefault;
     e.addEventListener('touchstart', handleTouchStart);
     e.addEventListener('touchmove', handleTouchMove);
+    e.addEventListener('touchend', handleTouchEnd);
   });
 
   function handleTouchStart(e) {
@@ -163,40 +165,42 @@ $(document).ready(function(){
   }
 
   function handleTouchMove(e) {
+    preventer = true;
     const touch = e.touches[0]
     touchEndX = touch.clientX;
     touchEndY = touch.clientY;
+  }
 
+  function handleTouchEnd(e) {
     const deltaX = touchEndX - touchStartX;
     const deltaY = touchEndY - touchStartY;
 
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.5) {
-      if (deltaX > 0) {
-        let pl = $(this).classList[1];
-        alert('right or left' + pl);
-      }
-    } else {
-      if (deltaY > 0) {
-        let pl = $(this).classList[1];
-        alert('right or left' + pl);
-      }
+      //Left and Right
+      flipCard($(this).find('.flipBtn'));
+    } else if (Math.abs(deltaX) < Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) < 0.5) {
+      //Up and Down
     }
+
+    setTimeout(function () {
+      preventer = false;
+    }, 50);
   }
 
   document.addEventListener("touchend", e => {
     [...e.changedTouches].forEach(touch => {
-      var t = $(touch.target)
-      var c = t.attr('class');
-      console.log(c);
-      if (t.hasClass('flipBtn')) {
-        flipCard(t)
+      if (!preventer) {
+        var t = $(touch.target)
+        var c = t.attr('class');
+        console.log(c);
+        if (t.hasClass('flipBtn')) {
+          flipCard(t)
+        }
+        if (t.hasClass('lifeBtn')) {
+          changeLife(t)
+        }
       }
-      if (t.hasClass('lifeBtn')) {
-        changeLife(t)
-      }
-
     });
-
   })
 
   $(document).on('click touchstart',function () {
@@ -256,21 +260,21 @@ $(document).ready(function(){
       }
     })
 
-    fMonarchBtn.each(function (index) {
-      if (gameState[index][4]) {
-        $(this).addClass('mOn');
-        fMonarchBtn.addClass('active');
-        bMonarchBtn.addClass('active').addClass('mOn');
-      }
-    })
-
-    fInitiativeBtn.each(function (index) {
-      if (gameState[index][5]) {
-        $(this).addClass('iOn');
-        fInitiativeBtn.addClass('active');
-        bInitiativeBtn.addClass('active').addClass('iOn');
-      }
-    })
+    // fMonarchBtn.each(function (index) {
+    //   if (gameState[index][4]) {
+    //     $(this).addClass('mOn');
+    //     fMonarchBtn.addClass('active');
+    //     bMonarchBtn.addClass('active').addClass('mOn');
+    //   }
+    // })
+    //
+    // fInitiativeBtn.each(function (index) {
+    //   if (gameState[index][5]) {
+    //     $(this).addClass('iOn');
+    //     fInitiativeBtn.addClass('active');
+    //     bInitiativeBtn.addClass('active').addClass('iOn');
+    //   }
+    // })
 
     colorBox.each(function (index) {
       let p = Math.floor(index / 5);
@@ -484,91 +488,91 @@ $(document).ready(function(){
     }
     updateLocalStorage();
   }
-  function resetPoison(el) {
-    el.html(0);
+  function resetPoison(e) {
+    e.html(0);
     poisonBtn.removeClass('poisonOn')
     updateLocalStorage();
   }
 
-  function toggleMonarch() {
-    let monarchState = $(this).hasClass('active');
-    let monarch = $('.monarch');
-    let backMonarch = $('.card-face-back').find('.monarch');
-    let frontMonarch = $('.card-face-front').find('.monarch');
-    let thisFrontMonarch = detectPlayer($(this)).find('.card-face-front').find('.monarch')
-
-    let pIndex = playerIndex($(this));
-
-    if (monarchState) {
-      monarch.removeClass('active');
-      monarch.removeClass('mOn');
-      pIndex = -1;
-    } else {
-      monarch.addClass('active');
-      backMonarch.addClass('mOn');
-      frontMonarch.removeClass('mOn');
-      thisFrontMonarch.addClass('mOn');
-    }
-    for (var i = 0; i < gameState.length; i++) {
-      gameState[i][4] = false;
-      if (i == pIndex) {
-        gameState[i][4] = true;
-      }
-    }
-    updateLocalStorage();
-  }
-  function becomeMonarch() {
-    fMonarchBtn.removeClass('mOn');
-    $(this).addClass('mOn');
-    let pIndex = playerIndex($(this));
-    for (var i = 0; i < gameState.length; i++) {
-      gameState[i][4] = false;
-      if (i == pIndex) {
-        gameState[i][4] = true;
-      }
-    }
-    updateLocalStorage();
-  }
-
-  function toggleInitiative() {
-    let initiativeState = $(this).hasClass('active');
-    let initiative = $('.initiative');
-    let backInitiative = $('.card-face-back').find('.initiative');
-    let frontInitiative = $('.card-face-front').find('.initiative');
-    let thisFrontInitiative = detectPlayer($(this)).find('.card-face-front').find('.initiative')
-
-    let pIndex = playerIndex($(this));
-
-    if (initiativeState) {
-      initiative.removeClass('active');
-      initiative.removeClass('iOn');
-      pIndex = -1;
-    } else {
-      initiative.addClass('active');
-      backInitiative.addClass('iOn');
-      frontInitiative.removeClass('iOn');
-      thisFrontInitiative.addClass('iOn');
-    }
-    for (var i = 0; i < gameState.length; i++) {
-      gameState[i][5] = false;
-      if (i == pIndex) {
-        gameState[i][5] = true;
-      }
-    }
-    updateLocalStorage();
-  }
-  function takeInitiative() {
-    fInitiativeBtn.removeClass('iOn');
-    $(this).addClass('iOn');
-    let pIndex = playerIndex($(this));
-    for (var i = 0; i < gameState.length; i++) {
-      gameState[i][5] = false;
-      if (i == pIndex) {
-        gameState[i][5] = true;
-      }
-    }
-    updateLocalStorage();
-  }
+  // function toggleMonarch() {
+  //   let monarchState = $(this).hasClass('active');
+  //   let monarch = $('.monarch');
+  //   let backMonarch = $('.card-face-back').find('.monarch');
+  //   let frontMonarch = $('.card-face-front').find('.monarch');
+  //   let thisFrontMonarch = detectPlayer($(this)).find('.card-face-front').find('.monarch')
+  //
+  //   let pIndex = playerIndex($(this));
+  //
+  //   if (monarchState) {
+  //     monarch.removeClass('active');
+  //     monarch.removeClass('mOn');
+  //     pIndex = -1;
+  //   } else {
+  //     monarch.addClass('active');
+  //     backMonarch.addClass('mOn');
+  //     frontMonarch.removeClass('mOn');
+  //     thisFrontMonarch.addClass('mOn');
+  //   }
+  //   for (var i = 0; i < gameState.length; i++) {
+  //     gameState[i][4] = false;
+  //     if (i == pIndex) {
+  //       gameState[i][4] = true;
+  //     }
+  //   }
+  //   updateLocalStorage();
+  // }
+  // function becomeMonarch() {
+  //   fMonarchBtn.removeClass('mOn');
+  //   $(this).addClass('mOn');
+  //   let pIndex = playerIndex($(this));
+  //   for (var i = 0; i < gameState.length; i++) {
+  //     gameState[i][4] = false;
+  //     if (i == pIndex) {
+  //       gameState[i][4] = true;
+  //     }
+  //   }
+  //   updateLocalStorage();
+  // }
+  //
+  // function toggleInitiative() {
+  //   let initiativeState = $(this).hasClass('active');
+  //   let initiative = $('.initiative');
+  //   let backInitiative = $('.card-face-back').find('.initiative');
+  //   let frontInitiative = $('.card-face-front').find('.initiative');
+  //   let thisFrontInitiative = detectPlayer($(this)).find('.card-face-front').find('.initiative')
+  //
+  //   let pIndex = playerIndex($(this));
+  //
+  //   if (initiativeState) {
+  //     initiative.removeClass('active');
+  //     initiative.removeClass('iOn');
+  //     pIndex = -1;
+  //   } else {
+  //     initiative.addClass('active');
+  //     backInitiative.addClass('iOn');
+  //     frontInitiative.removeClass('iOn');
+  //     thisFrontInitiative.addClass('iOn');
+  //   }
+  //   for (var i = 0; i < gameState.length; i++) {
+  //     gameState[i][5] = false;
+  //     if (i == pIndex) {
+  //       gameState[i][5] = true;
+  //     }
+  //   }
+  //   updateLocalStorage();
+  // }
+  // function takeInitiative() {
+  //   fInitiativeBtn.removeClass('iOn');
+  //   $(this).addClass('iOn');
+  //   let pIndex = playerIndex($(this));
+  //   for (var i = 0; i < gameState.length; i++) {
+  //     gameState[i][5] = false;
+  //     if (i == pIndex) {
+  //       gameState[i][5] = true;
+  //     }
+  //   }
+  //   updateLocalStorage();
+  // }
 
   function showConcede() {
     let concede = $(this).parent().parent().parent().parent().children('.concede');

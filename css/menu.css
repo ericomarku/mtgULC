@@ -40,9 +40,9 @@
 }
 
 .menuItems {
-  width: 38vmin;
-  height: 38vmin;
-  background-color: #222;
+  width: 35vmin;
+  height: 35vmin;
+  background-color: none;
   transition: width .3s ease-in-out, height .3s ease-in-out;
 }
 
@@ -63,10 +63,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12vmin;
-  height: 12vmin;
+  width: 10vmin;
+  height: 10vmin;
   border-radius: 50%;
-  background: none;
+  background: #222;
 }
 
 .menuItems img {
@@ -90,36 +90,36 @@
 #mI0 {
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 0))
+    rotate(calc(calc(1turn / 5) * 0))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .0s;
 }
 #mI1 {
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 1))
+    rotate(calc(calc(1turn / 5) * 1))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .05s;
 }
 #mI2 {
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 2))
+    rotate(calc(calc(1turn / 5) * 2))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .1s;
 }
 #mI3 {
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 3))
+    rotate(calc(calc(1turn / 5) * 3))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .15s;
 }
-#mI4 {
+/* #mI4 {
   opacity: .3;
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 4))
+    rotate(calc(calc(1turn / 5) * 4))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .2s;
 }
@@ -127,7 +127,7 @@
   opacity: .3;
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 5))
+    rotate(calc(calc(1turn / 5) * 5))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .25s;
 }
@@ -135,16 +135,16 @@
   opacity: .3;
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 6))
+    rotate(calc(calc(1turn / 5) * 6))
     translateY(-12vmin) rotate(-.5turn);
   transition: transform .3s ease-in-out .3s;
-}
+} */
 #mI7{
   transform:
     translate(-50%, -50%)
-    rotate(calc(calc(1turn / 8) * 7))
+    rotate(calc(calc(1turn / 5) * 4))
     translateY(-12vmin) rotate(-.5turn);
-  transition: transform .3s ease-in-out .35s;
+  transition: transform .3s ease-in-out .2s;
 }
 
 .closed .menuItems {
