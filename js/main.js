@@ -133,7 +133,7 @@ $(document).ready(function(){
   resetBtn.click(reset);
   setPlayersBtn.click(changePlayers);
 
-  setup();
+
 
   menu.on('touchmove', moveMenu);
   function moveMenu(e) {
@@ -215,6 +215,8 @@ $(document).ready(function(){
   screen.orientation.addEventListener('change', function() {
 	   console.log('Current orientation is ' + screen.orientation.type);
   });
+
+  setup();
 
   // let screenLock;
   // navigator.wakeLock.request('screen').then(lock => {
