@@ -172,11 +172,13 @@ $(document).ready(function(){
 
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.5) {
       if (deltaX > 0) {
-        alert('right or left', $(this));
+        let pl = $(this).classList[1];
+        alert('right or left' + pl);
       }
     } else {
       if (deltaY > 0) {
-        alert('up or down', $(this));
+        let pl = $(this).classList[1];
+        alert('right or left' + pl);
       }
     }
   }
