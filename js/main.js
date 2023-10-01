@@ -175,13 +175,16 @@ $(document).ready(function(){
     const deltaX = touchEndX - touchStartX;
     const deltaY = touchEndY - touchStartY;
 
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.5) {
-      //Left and Right
-      flipCard($(this).find('.flipBtn'));
-    } else if (Math.abs(deltaX) < Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) < 0.5) {
-      //Up and Down
+    if (Math.abs(deltaX) + Math.abs(deltaX) > window.screen.width*0.2 && preventer) {
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.25) {
+        //Left and Right
+        flipCard($(this).find('.flipBtn'));
+      } else if (Math.abs(deltaX) < Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) < 0.25) {
+        //Up and Down
+      }
     }
-
+    touchStartX = touchEndX;
+    touchStartY = touchEndY;
     setTimeout(function () {
       preventer = false;
     }, 50);
@@ -192,7 +195,7 @@ $(document).ready(function(){
       if (!preventer) {
         var t = $(touch.target)
         var c = t.attr('class');
-        console.log(c);
+        // console.log(c);
         if (t.hasClass('flipBtn')) {
           flipCard(t)
         }
