@@ -804,7 +804,6 @@ img, p {
 
 .deathBtn img {
   height: 90%;
-  /* filter: invert(); */
   position: absolute;
   top: 50%;
   bottom: 50%;

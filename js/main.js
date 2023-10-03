@@ -96,13 +96,7 @@ $(document).ready(function(){
   let colorBtn = $('.colorSelect').children('.colorContainer').children('input');
 
   let poisonBtn = $('.poisonContainer');
-
-  // let fMonarchBtn = $('.card-face-front').find('.monarch');
-  // let bMonarchBtn = $('.card-face-back').find('.monarch');
-  //
-  // let fInitiativeBtn = $('.card-face-front').find('.initiative');
-  // let bInitiativeBtn = $('.card-face-back').find('.initiative');
-
+  
   let flipBtns = $('.flipBtn');
 
   let resetBtn = $('.reset');
@@ -110,9 +104,6 @@ $(document).ready(function(){
 
 
   let menu = $('.menu');
-
-  // lifeBtns.click(changeLife);
-  // cmdBtns.on('click mousedown touchstart mouseup mouseleave touchend', changeCmd);
 
   deathBtns.on('click touchstart', showConcede);
   defeatBtns.click(playerLoses);
@@ -123,13 +114,7 @@ $(document).ready(function(){
 
   poisonBtn.on('click mousedown touchstart mouseup mouseleave touchend', changePoisen);
 
-  // fMonarchBtn.on('click touchstart', becomeMonarch);
-  // bMonarchBtn.click(toggleMonarch);
-  //
-  // fInitiativeBtn.on('click touchstart', takeInitiative);
-  // bInitiativeBtn.click(toggleInitiative);
-
-  // flipBtns.click(flipCard);
+  flipBtns.click(flipCard);
 
   resetBtn.click(reset);
   setPlayersBtn.click(changePlayers);
@@ -229,14 +214,6 @@ $(document).ready(function(){
 
   setup();
 
-  // let screenLock;
-  // navigator.wakeLock.request('screen').then(lock => {
-  //   screenLock = lock;
-  // });
-
-  // Or you can make an await call
-  // let screenLock = await navigator.wakeLock.request('screen');
-
   function setup() {
 
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
@@ -273,22 +250,6 @@ $(document).ready(function(){
         $(this).parent().addClass('poisonOn');
       }
     })
-
-    // fMonarchBtn.each(function (index) {
-    //   if (gameState[index][4]) {
-    //     $(this).addClass('mOn');
-    //     fMonarchBtn.addClass('active');
-    //     bMonarchBtn.addClass('active').addClass('mOn');
-    //   }
-    // })
-    //
-    // fInitiativeBtn.each(function (index) {
-    //   if (gameState[index][5]) {
-    //     $(this).addClass('iOn');
-    //     fInitiativeBtn.addClass('active');
-    //     bInitiativeBtn.addClass('active').addClass('iOn');
-    //   }
-    // })
 
     colorBox.each(function (index) {
       let p = Math.floor(index / 5);
@@ -525,86 +486,6 @@ $(document).ready(function(){
     poisonBtn.removeClass('poisonOn')
     updateLocalStorage();
   }
-
-  // function toggleMonarch() {
-  //   let monarchState = $(this).hasClass('active');
-  //   let monarch = $('.monarch');
-  //   let backMonarch = $('.card-face-back').find('.monarch');
-  //   let frontMonarch = $('.card-face-front').find('.monarch');
-  //   let thisFrontMonarch = detectPlayer($(this)).find('.card-face-front').find('.monarch')
-  //
-  //   let pIndex = playerIndex($(this));
-  //
-  //   if (monarchState) {
-  //     monarch.removeClass('active');
-  //     monarch.removeClass('mOn');
-  //     pIndex = -1;
-  //   } else {
-  //     monarch.addClass('active');
-  //     backMonarch.addClass('mOn');
-  //     frontMonarch.removeClass('mOn');
-  //     thisFrontMonarch.addClass('mOn');
-  //   }
-  //   for (var i = 0; i < gameState.length; i++) {
-  //     gameState[i][4] = false;
-  //     if (i == pIndex) {
-  //       gameState[i][4] = true;
-  //     }
-  //   }
-  //   updateLocalStorage();
-  // }
-  // function becomeMonarch() {
-  //   fMonarchBtn.removeClass('mOn');
-  //   $(this).addClass('mOn');
-  //   let pIndex = playerIndex($(this));
-  //   for (var i = 0; i < gameState.length; i++) {
-  //     gameState[i][4] = false;
-  //     if (i == pIndex) {
-  //       gameState[i][4] = true;
-  //     }
-  //   }
-  //   updateLocalStorage();
-  // }
-  //
-  // function toggleInitiative() {
-  //   let initiativeState = $(this).hasClass('active');
-  //   let initiative = $('.initiative');
-  //   let backInitiative = $('.card-face-back').find('.initiative');
-  //   let frontInitiative = $('.card-face-front').find('.initiative');
-  //   let thisFrontInitiative = detectPlayer($(this)).find('.card-face-front').find('.initiative')
-  //
-  //   let pIndex = playerIndex($(this));
-  //
-  //   if (initiativeState) {
-  //     initiative.removeClass('active');
-  //     initiative.removeClass('iOn');
-  //     pIndex = -1;
-  //   } else {
-  //     initiative.addClass('active');
-  //     backInitiative.addClass('iOn');
-  //     frontInitiative.removeClass('iOn');
-  //     thisFrontInitiative.addClass('iOn');
-  //   }
-  //   for (var i = 0; i < gameState.length; i++) {
-  //     gameState[i][5] = false;
-  //     if (i == pIndex) {
-  //       gameState[i][5] = true;
-  //     }
-  //   }
-  //   updateLocalStorage();
-  // }
-  // function takeInitiative() {
-  //   fInitiativeBtn.removeClass('iOn');
-  //   $(this).addClass('iOn');
-  //   let pIndex = playerIndex($(this));
-  //   for (var i = 0; i < gameState.length; i++) {
-  //     gameState[i][5] = false;
-  //     if (i == pIndex) {
-  //       gameState[i][5] = true;
-  //     }
-  //   }
-  //   updateLocalStorage();
-  // }
 
   function showConcede() {
     let concede = $(this).parent().parent().children('.concede');
