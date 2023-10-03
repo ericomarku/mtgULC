@@ -77,6 +77,7 @@ $(document).ready(function(){
   ];
 
   let gameState = JSON.parse(localStorage.getItem('gameState'));
+  let commandMode = false;
 
   if (gameState == null) {
     gameState = newGameState;
@@ -85,7 +86,7 @@ $(document).ready(function(){
 
   let playerGrid = $('.playersGrid');
   let lifeBtns = $('.lifeBtn');
-  let cmdBtns = $('.CMD');
+  // let cmdBtns = $('.CMD');
 
   let deathBtns = $('.deathBtn');
   let defeatBtns = $('.defeat');
@@ -111,7 +112,7 @@ $(document).ready(function(){
   let menu = $('.menu');
 
   // lifeBtns.click(changeLife);
-  cmdBtns.on('click mousedown touchstart mouseup mouseleave touchend', changeCmd);
+  // cmdBtns.on('click mousedown touchstart mouseup mouseleave touchend', changeCmd);
 
   deathBtns.on('click touchstart', showConcede);
   defeatBtns.click(playerLoses);
@@ -179,6 +180,7 @@ $(document).ready(function(){
       if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) > 0.25) {
         //Left and Right
         flipCard($(this).find('.flipBtn'));
+        preventer = false;
       } else if (Math.abs(deltaX) < Math.abs(deltaY) && Math.abs(deltaX) / Math.abs(deltaY) < 0.25) {
         //Up and Down
       }
@@ -192,15 +194,21 @@ $(document).ready(function(){
 
   document.addEventListener("touchend", e => {
     [...e.changedTouches].forEach(touch => {
+      var t = $(touch.target)
+      var c = t.attr('class');
+      // console.log(t);
       if (!preventer) {
-        var t = $(touch.target)
-        var c = t.attr('class');
-        // console.log(c);
-        if (t.hasClass('flipBtn')) {
-          flipCard(t)
-        }
-        if (t.hasClass('lifeBtn')) {
-          changeLife(t)
+        if (!commandMode) {
+          if (t.hasClass('flipBtn')) {
+            flipCard(t)
+          }
+          if (t.hasClass('lifeBtn')) {
+            changeLife(t)
+          }
+        } else {
+          if (t.hasClass('cmdBtn')) {
+            changeCmd(t)
+          }
         }
       }
     });
@@ -235,12 +243,13 @@ $(document).ready(function(){
     let playerCards = $('.playerCard');
 
     let lifeValues = $('.lValue');
-    let cmdValues = $('.CMDValue');
+    let cmdValues = $('.cmdValue');
     let poisonValues = $('.pValue');
 
     let deathCards = $('.card-face-dead');
     let deadCards = $('.dead');
     let flippedCards = $('.flipped');
+    let commandCards = $('.cmd');
     let concede = $('.concede');
     let colorBox = $('.colorContainer').children('input')
 
@@ -300,6 +309,11 @@ $(document).ready(function(){
     });
 
     flippedCards.removeClass('flipped');
+    commandCards.removeClass('cmd')
+    for (var i = 1; i <= 6; i++) {
+      commandCards.removeClass('cd' + i);
+    }
+
     concede.css('pointer-events', 'none').css('opacity', '0');
 
     let setDeathAnimations = [];
@@ -365,7 +379,7 @@ $(document).ready(function(){
   }
 
   function changeLife(e) {
-    let add = e.hasClass('addLbtn');
+    let add = e.hasClass('addbtn');
     let lifeElement = e.parent().children('.lifeCount').children('.lValue')
     let lifeChange = e.parent().children('.lifeCount').children('.lChange')
     let currentLife = parseFloat(lifeElement.html());
@@ -416,41 +430,54 @@ $(document).ready(function(){
   }
 
   function changeCmd(e) {
-    e.preventDefault();
-    let action = e.type;
+    let add = e.hasClass('addbtn');
+    let activeCmd = e.parent().parent().attr('class').replace(/\D/g,'');
+    let cmdElement = e.parent().children('.cmdCount').children('.command' + activeCmd);
+    let cmdChange = e.parent().children('.cmdCount').children('.cmdChange')
+    let currentCmd = parseFloat(cmdElement.html());
+    let resentChange = parseFloat(cmdChange.html());
+    let changeBy;
 
-    let cmdElem = $(this).children('.CMDValue');
-    let cmd = parseFloat(cmdElem.html());
+    let pIndex = playerIndex(e);
 
-    let cmdIndex = playerIndex($(this));
-    let pIndex = playerIndex($(this).parent());
-
-    if (action == 'mousedown' || action == 'touchstart') {
-      isHolding = setTimeout(function () {
-        gameState[pIndex][1][cmdIndex] = 0;
-        resetCmd(cmdElem);
-        cmdElem.addClass('reset');
-        return;
-      }, 2000);
+    if (add) {
+      changeBy = 1;
+    } else {
+      changeBy = -1;
     }
 
-    if (action == 'click' || action == 'mouseup' || action == 'mouseleave' || action == 'touchend') {
-      clearTimeout(isHolding);
-
-      let hasReset = cmdElem.hasClass('reset');
-
-      if (hasReset) {
-        cmdElem.removeClass('reset');
-      } else {
-        cmd++;
-        cmdElem.html(cmd);
-        gameState[pIndex][1][cmdIndex] = cmd;
-      }
+    if (!resentChange) {
+      resentChange = 0;
     }
-    updateLocalStorage();
-  }
-  function resetCmd(el) {
-    el.html(0);
+
+    let newCmd;
+    let newChange;
+
+    let showing = cmdChange.css("opacity")
+
+    if (showing == 0) {
+      resentChange = 0;
+    }
+
+    newCmd = currentCmd + changeBy;
+    newChange = resentChange + changeBy;
+
+    if (newChange > 0) {
+      newChange = "+" + newChange;
+    }
+    if (newChange == 0) {
+      newChange = "";
+    }
+
+    cmdElement.html(newCmd);
+    cmdChange.html(newChange);
+
+    cmdChange.addClass('showChange');
+    setTimeout(function () {
+      cmdChange.removeClass('showChange');
+    }, 5);
+
+    gameState[pIndex][1][activeCmd - 1] = newCmd;
     updateLocalStorage();
   }
 
@@ -580,7 +607,7 @@ $(document).ready(function(){
   // }
 
   function showConcede() {
-    let concede = $(this).parent().parent().parent().parent().children('.concede');
+    let concede = $(this).parent().parent().children('.concede');
     concede.css('pointer-events', 'auto').css('opacity', '1');
   }
   function hideConcede() {
@@ -662,11 +689,21 @@ $(document).ready(function(){
 
   function flipCard(e) {
     let card = e.parent().parent();
+    let inCard = $('.card-inner');
+    let numFlipped = document.getElementsByClassName('flipped');
     let isFlipped = card.hasClass('flipped');
+    let p = card.parent().attr('class').replace(/\D/g,'');
     if (isFlipped) {
       card.removeClass('flipped');
+      commandMode = false;
+      inCard.removeClass('cmd cd' + p)
     } else {
-      card.addClass('flipped');
+      commandMode = true;
+      if (numFlipped.length <= 0) {
+        card.addClass('flipped');
+        inCard.addClass('cmd cd' + p)
+        card.removeClass('cmd cd' + p)
+      }
     }
   }
 

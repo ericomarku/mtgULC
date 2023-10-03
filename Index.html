@@ -15,17 +15,37 @@
     <div class="playersGrid">
 
       <div class="playerCard p1 swipeAble">
-        <div class="card-inner">
+        <div class="card-inner" value="1">
 
           <div class="card-face-dead face"></div>
 
-          <div class="card-face-front face c1">
-
-            <button type="button" class="addLbtn lifeBtn">
+          <div class="card-face-command face">
+            <button type="button" class="addbtn cmdBtn">
               <img src="css/img/player-icons/add.svg" class="life-icon add"/>
             </button>
 
-            <button type="button" class="subLbtn lifeBtn">
+            <button type="button" class="subbtn cmdBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="cmdCount">
+              <p class="cmdChange">0</p>
+              <p class="cmdValue command2">0</p>
+              <p class="cmdValue command3">0</p>
+              <p class="cmdValue command4">0</p>
+              <p class="cmdValue command5">0</p>
+              <p class="cmdValue command6">0</p>
+              <img class="cmdIcon" src="css/img/player-icons/Commander.svg"/>
+            </div>
+          </div>
+
+          <div class="card-face-front face c1">
+
+            <button type="button" class="addbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subbtn lifeBtn">
               <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
             </button>
 
@@ -82,43 +102,16 @@
               <div class="sky"></div>
             </div>
           </div>
-
           <div class="card-face-back face">
 
             <div class="CMD-DMG-Container">
               <div class="header">
-                <p class="main">CMD Damage</p>
-                <p class="under">Hold to reset.</p>
+                <p class="main">Commander Damage</p>
+                <p class="under">Concede</p>
               </div>
-              <div class="CMD-DMG">
-                <div class="CMD p1">
-                  <!-- <div class="c1"></div>
-                  <p class="CMDValue">Me</p> -->
-                  <button type="button" class="deathBtn">
-                    <img src="css/img/player-icons/death.svg">
-                  </button>
-                </div>
-                <div class="CMD p2">
-                  <div class="c2"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p3">
-                  <div class="c3"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p4">
-                  <div class="c4"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p5">
-                  <div class="c5"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p6">
-                  <div class="c6"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-              </div>
+              <button type="button" class="deathBtn">
+                <img src="css/img/player-icons/death.svg">
+              </button>
             </div>
 
             <div class="concede">
@@ -135,17 +128,6 @@
               <p class="pValue">0</p>
             </div>
 
-            <!-- <div class="statusContainer">
-              <div class="monarch">
-                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
-              </div>
-              <p>You become the monarch.</p>
-              <div class="initiative">
-                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
-              </div>
-              <p>You take the initiative.</p>
-            </div> -->
-
             <button type="button" class="flipBtn">
               <img src="css/img/player-icons/flip.svg" class="flip-icon">
             </button>
@@ -154,19 +136,38 @@
 
         </div>
       </div>
-
       <div class="playerCard p2 swipeAble">
-        <div class="card-inner">
+        <div class="card-inner" value="2">
 
           <div class="card-face-dead"></div>
+
+          <div class="card-face-command face">
+            <button type="button" class="addbtn cmdBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subbtn cmdBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="cmdCount">
+              <p class="cmdChange">0</p>
+              <p class="cmdValue command1">0</p>
+              <p class="cmdValue command3">0</p>
+              <p class="cmdValue command4">0</p>
+              <p class="cmdValue command5">0</p>
+              <p class="cmdValue command6">0</p>
+              <img class="cmdIcon" src="css/img/player-icons/Commander.svg"/>
+            </div>
+          </div>
 
           <div class="card-face-front c2">
 
-            <button type="button" class="addLbtn lifeBtn">
+            <button type="button" class="addbtn lifeBtn">
               <img src="css/img/player-icons/add.svg" class="life-icon add"/>
             </button>
 
-            <button type="button" class="subLbtn lifeBtn">
+            <button type="button" class="subbtn lifeBtn">
               <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
             </button>
 
@@ -223,43 +224,16 @@
               <div class="sky"></div>
             </div>
           </div>
-
           <div class="card-face-back">
 
             <div class="CMD-DMG-Container">
               <div class="header">
-                <p class="main">CMD Damage</p>
-                <p class="under">Hold to reset.</p>
+                <p class="main">Commander Damag</p>
+                <p class="under">Concede</p>
               </div>
-              <div class="CMD-DMG">
-                <div class="CMD p1">
-                  <div class="c1"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p2">
-                  <!-- <div class="c2"></div>
-                  <p class="CMDValue">Me</p> -->
-                  <button type="button" class="deathBtn">
-                    <img src="css/img/player-icons/death.svg" alt="">
-                  </button>
-                </div>
-                <div class="CMD p3">
-                  <div class="c3"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p4">
-                  <div class="c4"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p5">
-                  <div class="c5"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p6">
-                  <div class="c6"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-              </div>
+              <button type="button" class="deathBtn">
+                <img src="css/img/player-icons/death.svg" alt="">
+              </button>
             </div>
 
             <div class="concede">
@@ -276,17 +250,6 @@
               <p class="pValue">0</p>
             </div>
 
-            <!-- <div class="statusContainer">
-              <div class="monarch">
-                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
-              </div>
-              <p>You become the monarch.</p>
-              <div class="initiative">
-                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
-              </div>
-              <p>You take the initiative.</p>
-            </div> -->
-
             <button type="button" class="flipBtn">
               <img src="css/img/player-icons/flip.svg" class="flip-icon">
             </button>
@@ -295,19 +258,38 @@
 
         </div>
       </div>
-
       <div class="playerCard p3 swipeAble">
-        <div class="card-inner">
+        <div class="card-inner" value="3">
 
           <div class="card-face-dead"></div>
+
+          <div class="card-face-command face">
+            <button type="button" class="addbtn cmdBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subbtn cmdBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="cmdCount">
+              <p class="cmdChange">0</p>
+              <p class="cmdValue command1">0</p>
+              <p class="cmdValue command2">0</p>
+              <p class="cmdValue command4">0</p>
+              <p class="cmdValue command5">0</p>
+              <p class="cmdValue command6">0</p>
+              <img class="cmdIcon" src="css/img/player-icons/Commander.svg"/>
+            </div>
+          </div>
 
           <div class="card-face-front c3">
 
-            <button type="button" class="addLbtn lifeBtn">
+            <button type="button" class="addbtn lifeBtn">
               <img src="css/img/player-icons/add.svg" class="life-icon add"/>
             </button>
 
-            <button type="button" class="subLbtn lifeBtn">
+            <button type="button" class="subbtn lifeBtn">
               <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
             </button>
 
@@ -364,43 +346,16 @@
               <div class="sky"></div>
             </div>
           </div>
-
           <div class="card-face-back">
 
             <div class="CMD-DMG-Container">
               <div class="header">
-                <p class="main">CMD Damage</p>
-                <p class="under">Hold to reset.</p>
+                <p class="main">Commander Damage</p>
+                <p class="under">Concede</p>
               </div>
-              <div class="CMD-DMG">
-                <div class="CMD p1">
-                  <div class="c1"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p2">
-                  <div class="c2"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p3">
-                  <!-- <div class="c3"></div>
-                  <p class="CMDValue">Me</p> -->
-                  <button type="button" class="deathBtn">
-                    <img src="css/img/player-icons/death.svg" alt="">
-                  </button>
-                </div>
-                <div class="CMD p4">
-                  <div class="c4"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p5">
-                  <div class="c5"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p6">
-                  <div class="c6"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-              </div>
+              <button type="button" class="deathBtn">
+                <img src="css/img/player-icons/death.svg" alt="">
+              </button>
             </div>
 
             <div class="concede">
@@ -417,17 +372,6 @@
               <p class="pValue">0</p>
             </div>
 
-            <!-- <div class="statusContainer">
-              <div class="monarch">
-                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
-              </div>
-              <p>You become the monarch.</p>
-              <div class="initiative">
-                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
-              </div>
-              <p>You take the initiative.</p>
-            </div> -->
-
             <button type="button" class="flipBtn">
               <img src="css/img/player-icons/flip.svg" class="flip-icon">
             </button>
@@ -436,19 +380,38 @@
 
         </div>
       </div>
-
       <div class="playerCard p4 swipeAble">
-        <div class="card-inner">
+        <div class="card-inner" value="4">
 
           <div class="card-face-dead"></div>
+
+          <div class="card-face-command face">
+            <button type="button" class="addbtn cmdBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subbtn cmdBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="cmdCount">
+              <p class="cmdChange">0</p>
+              <p class="cmdValue command1">0</p>
+              <p class="cmdValue command2">0</p>
+              <p class="cmdValue command3">0</p>
+              <p class="cmdValue command5">0</p>
+              <p class="cmdValue command6">0</p>
+              <img class="cmdIcon" src="css/img/player-icons/Commander.svg"/>
+            </div>
+          </div>
 
           <div class="card-face-front c4">
 
-            <button type="button" class="addLbtn lifeBtn">
+            <button type="button" class="addbtn lifeBtn">
               <img src="css/img/player-icons/add.svg" class="life-icon add"/>
             </button>
 
-            <button type="button" class="subLbtn lifeBtn">
+            <button type="button" class="subbtn lifeBtn">
               <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
             </button>
 
@@ -505,43 +468,16 @@
               <div class="sky"></div>
             </div>
           </div>
-
           <div class="card-face-back">
 
             <div class="CMD-DMG-Container">
               <div class="header">
-                <p class="main">CMD Damage</p>
-                <p class="under">Hold to reset.</p>
+                <p class="main">Commander Damage</p>
+                <p class="under">Concede</p>
               </div>
-              <div class="CMD-DMG">
-                <div class="CMD p1">
-                  <div class="c1"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p2">
-                  <div class="c2"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p3">
-                  <div class="c3"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p4">
-                  <!-- <div class="c4"></div>
-                  <p class="CMDValue">Me</p> -->
-                  <button type="button" class="deathBtn">
-                    <img src="css/img/player-icons/death.svg" alt="">
-                  </button>
-                </div>
-                <div class="CMD p5">
-                  <div class="c5"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p6">
-                  <div class="c6"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-              </div>
+              <button type="button" class="deathBtn">
+                <img src="css/img/player-icons/death.svg" alt="">
+              </button>
             </div>
 
             <div class="concede">
@@ -558,17 +494,6 @@
               <p class="pValue">0</p>
             </div>
 
-            <!-- <div class="statusContainer">
-              <div class="monarch">
-                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
-              </div>
-              <p>You become the monarch.</p>
-              <div class="initiative">
-                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
-              </div>
-              <p>You take the initiative.</p>
-            </div> -->
-
             <button type="button" class="flipBtn">
               <img src="css/img/player-icons/flip.svg" class="flip-icon">
             </button>
@@ -577,19 +502,38 @@
 
         </div>
       </div>
-
       <div class="playerCard p5 swipeAble">
-        <div class="card-inner">
+        <div class="card-inner" value="5">
 
           <div class="card-face-dead"></div>
+
+          <div class="card-face-command face">
+            <button type="button" class="addbtn cmdBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subbtn cmdBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="cmdCount">
+              <p class="cmdChange">0</p>
+              <p class="cmdValue command1">0</p>
+              <p class="cmdValue command2">0</p>
+              <p class="cmdValue command3">0</p>
+              <p class="cmdValue command4">0</p>
+              <p class="cmdValue command6">0</p>
+              <img class="cmdIcon" src="css/img/player-icons/Commander.svg"/>
+            </div>
+          </div>
 
           <div class="card-face-front c5">
 
-            <button type="button" class="addLbtn lifeBtn">
+            <button type="button" class="addbtn lifeBtn">
               <img src="css/img/player-icons/add.svg" class="life-icon add"/>
             </button>
 
-            <button type="button" class="subLbtn lifeBtn">
+            <button type="button" class="subbtn lifeBtn">
               <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
             </button>
 
@@ -646,43 +590,16 @@
               <div class="sky"></div>
             </div>
           </div>
-
           <div class="card-face-back">
 
             <div class="CMD-DMG-Container">
               <div class="header">
-                <p class="main">CMD Damage</p>
-                <p class="under">Hold to reset.</p>
+                <p class="main">Commander Damage</p>
+                <p class="under">Concede</p>
               </div>
-              <div class="CMD-DMG">
-                <div class="CMD p1">
-                  <div class="c1"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p2">
-                  <div class="c2"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p3">
-                  <div class="c3"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p4">
-                  <div class="c4"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p5">
-                  <!-- <div class="c5"></div>
-                  <p class="CMDValue">Me</p> -->
-                  <button type="button" class="deathBtn">
-                    <img src="css/img/player-icons/death.svg" alt="">
-                  </button>
-                </div>
-                <div class="CMD p6">
-                  <div class="c6"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-              </div>
+              <button type="button" class="deathBtn">
+                <img src="css/img/player-icons/death.svg" alt="">
+              </button>
             </div>
 
             <div class="concede">
@@ -698,17 +615,6 @@
               <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
               <p class="pValue">0</p>
             </div>
-
-            <!-- <div class="statusContainer">
-              <div class="monarch">
-                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
-              </div>
-              <p>You become the monarch.</p>
-              <div class="initiative">
-                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
-              </div>
-              <p>You take the initiative.</p>
-            </div> -->
 
             <button type="button" class="flipBtn">
               <img src="css/img/player-icons/flip.svg" class="flip-icon">
@@ -718,19 +624,38 @@
 
         </div>
       </div>
-
       <div class="playerCard p6 swipeAble">
-        <div class="card-inner">
+        <div class="card-inner" value="6">
 
           <div class="card-face-dead"></div>
 
-          <div class="card-face-front c6">
-
-            <button type="button" class="addLbtn lifeBtn">
+          <div class="card-face-command face">
+            <button type="button" class="addbtn cmdBtn">
               <img src="css/img/player-icons/add.svg" class="life-icon add"/>
             </button>
 
-            <button type="button" class="subLbtn lifeBtn">
+            <button type="button" class="subbtn cmdBtn">
+              <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
+            </button>
+
+            <div class="cmdCount">
+              <p class="cmdChange">0</p>
+              <p class="cmdValue command1">0</p>
+              <p class="cmdValue command2">0</p>
+              <p class="cmdValue command3">0</p>
+              <p class="cmdValue command4">0</p>
+              <p class="cmdValue command5">0</p>
+              <img class="cmdIcon" src="css/img/player-icons/Commander.svg"/>
+            </div>
+          </div>
+
+          <div class="card-face-front c6">
+
+            <button type="button" class="addbtn lifeBtn">
+              <img src="css/img/player-icons/add.svg" class="life-icon add"/>
+            </button>
+
+            <button type="button" class="subbtn lifeBtn">
               <img src="css/img/player-icons/sub.svg" class="life-icon sub"/>
             </button>
 
@@ -787,43 +712,16 @@
               <div class="sky"></div>
             </div>
           </div>
-
           <div class="card-face-back">
 
             <div class="CMD-DMG-Container">
               <div class="header">
-                <p class="main">CMD Damage</p>
-                <p class="under">Hold to reset.</p>
+                <p class="main">Commander Damage</p>
+                <p class="under">Concede</p>
               </div>
-              <div class="CMD-DMG">
-                <div class="CMD p1">
-                  <div class="c1"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p2">
-                  <div class="c2"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p3">
-                  <div class="c3"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p4">
-                  <div class="c4"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p5">
-                  <div class="c5"></div>
-                  <p class="CMDValue">0</p>
-                </div>
-                <div class="CMD p6">
-                  <!-- <div class="c6"></div>
-                  <p class="CMDValue">Me</p> -->
-                  <button type="button" class="deathBtn">
-                    <img src="css/img/player-icons/death.svg" alt="">
-                  </button>
-                </div>
-              </div>
+              <button type="button" class="deathBtn">
+                <img src="css/img/player-icons/death.svg" alt="">
+              </button>
             </div>
 
             <div class="concede">
@@ -839,17 +737,6 @@
               <img src="css/img/player-icons/MTG_(P).svg" class="poison-icon">
               <p class="pValue">0</p>
             </div>
-
-            <!-- <div class="statusContainer">
-              <div class="monarch">
-                <img src="css/img/player-icons/crown.svg" class="monarch-icon">
-              </div>
-              <p>You become the monarch.</p>
-              <div class="initiative">
-                <img src="css/img/player-icons/sword.svg" class="initiative-icon">
-              </div>
-              <p>You take the initiative.</p>
-            </div> -->
 
             <button type="button" class="flipBtn">
               <img src="css/img/player-icons/flip.svg" class="flip-icon">
