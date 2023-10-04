@@ -521,7 +521,7 @@ $(document).ready(function(){
       colorMenu.parent().append('<button class="colorUnselect"></button>')
       $('.colorUnselect').on('touchstart', function () {
         $('.colorUnselect').remove();
-        cSelect.removeClass('responsive');
+        $('.responsive').removeClass('responsive');
       })
     }
   }
