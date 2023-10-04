@@ -482,7 +482,7 @@ img, p {
 }
 
 .addbtn > img {
-  left: 22vmin;
+  left: 50%;
 }
 
 .addbtn::before {
@@ -509,7 +509,7 @@ img, p {
 }
 
 .subbtn > img {
-  right: 22vmin;
+  right: 50%;
 }
 
 .subbtn::before {
@@ -622,20 +622,22 @@ img, p {
 
 .colorSelect {
   position:relative;
-  width:2.5vmax;
-  height:2.5vmax;
+  width:4vmax;
+  height:4vmax;
   border-radius:50%;
-  margin: 2vmax;
+  margin: 1.5vmax;
   opacity: 0.6;
   z-index: 2;
+  border-radius: 50%;
+  /* background-color: blue; */
   transform: translateZ(4vmin);
-  transition: width .5s, height .5s, margin .5s, transform .5s, opacity .5s;
+  transition: width .5s, height .5s, margin .5s, transform .5s, opacity .5s !important;
 }
 
 .responsive {
-  width: 8vmax;
-  height: 8vmax;
-  margin: 4vmax;
+  width: 14vmax;
+  height: 14vmax;
+  margin: 1vmax;
   opacity: 1;
   transform: translateZ(7vmin);
 }
@@ -666,8 +668,8 @@ img, p {
 .colorContainer {
   display: block;
   position: absolute;
-  top: 50;
-  right: 50;
+  top: 50%;
+  left: 50%;
   height: 100%;
   width: 100%;
   cursor: pointer;
@@ -681,33 +683,33 @@ img, p {
 }
 
 .W {
-  transform: translateY(-40%) scale(0.25);
+  transform: translate(-50%, -50%) translateY(-30%) scale(0.2);
 } .responsive .W {
-  transform: translateY(-40%) scale(0.35);
+  transform: translate(-50%, -50%) translateY(-30%) scale(0.25);
 }
 
 .U {
-  transform: rotate(0.2turn) translateY(-40%) scale(0.25);
+  transform: translate(-50%, -50%) rotate(0.2turn) translateY(-30%) scale(0.2);
 } .responsive .U {
-  transform: rotate(0.2turn) translateY(-40%) scale(0.35);
+  transform: translate(-50%, -50%) rotate(0.2turn) translateY(-30%) scale(0.25);
 }
 
 .B {
-  transform: rotate(0.4turn) translateY(-40%) scale(0.25);
+  transform: translate(-50%, -50%) rotate(0.4turn) translateY(-30%) scale(0.2);
 } .responsive .B {
-  transform: rotate(0.4turn) translateY(-40%) scale(0.35);
+  transform: translate(-50%, -50%) rotate(0.4turn) translateY(-30%) scale(0.25);
 }
 
 .R {
-  transform: rotate(0.6turn) translateY(-40%) scale(0.25);
+  transform: translate(-50%, -50%) rotate(0.6turn) translateY(-30%) scale(0.2);
 } .responsive .R {
-  transform: rotate(0.6turn) translateY(-40%) scale(0.35);
+  transform: translate(-50%, -50%) rotate(0.6turn) translateY(-30%) scale(0.25);
 }
 
 .G {
-  transform: rotate(0.8turn) translateY(-40%) scale(0.25);
+  transform: translate(-50%, -50%) rotate(0.8turn) translateY(-30%) scale(0.2);
 } .responsive .G {
-  transform: rotate(0.8turn) translateY(-40%) scale(0.35);
+  transform: translate(-50%, -50%) rotate(0.8turn) translateY(-30%) scale(0.25);
 }
 
 .colorContainer input {
@@ -948,6 +950,11 @@ img, p {
 }
 
 /* this it the dead card face. */
+
+.dead {
+  pointer-events: none;
+  touch-action: none;
+}
 
 .card-face-dead {
   pointer-events: none;

@@ -96,7 +96,7 @@ $(document).ready(function(){
   let colorBtn = $('.colorSelect').children('.colorContainer').children('input');
 
   let poisonBtn = $('.poisonContainer');
-  
+
   let flipBtns = $('.flipBtn');
 
   let resetBtn = $('.reset');
@@ -269,11 +269,7 @@ $(document).ready(function(){
       updateColor($(this))
     });
 
-    flippedCards.removeClass('flipped');
-    commandCards.removeClass('cmd')
-    for (var i = 1; i <= 6; i++) {
-      commandCards.removeClass('cd' + i);
-    }
+    mainState();
 
     concede.css('pointer-events', 'none').css('opacity', '0');
 
@@ -329,6 +325,8 @@ $(document).ready(function(){
   }
 
   function changePlayers() {
+    mainState();
+
     let newPlayers = gameState[6][0] + 1
     playerGrid.removeClass('numP' + gameState[6][0]).css('opacity', 0);
     if (newPlayers > 6) {
@@ -336,6 +334,13 @@ $(document).ready(function(){
     }
     gameState[6][0] = newPlayers;
     playerGrid.addClass('numP' + gameState[6][0]).css('opacity', 1);
+
+    let cmdCards = $('.cmd');
+    cmdCards.removeClass('cmd')
+    for (var i = 1; i <= 6; i++) {
+      cmdCards.removeClass('cd' + i);
+    }
+
     updateLocalStorage();
   }
 
@@ -499,6 +504,8 @@ $(document).ready(function(){
     let player = detectPlayer($(this));
     player.addClass('dead')
 
+    mainState()
+
     let pIndex = playerIndex($(this));
     gameState[pIndex][2] = true;
     updateLocalStorage();
@@ -512,7 +519,7 @@ $(document).ready(function(){
       cSelect.addClass('responsive');
 
       colorMenu.parent().append('<button class="colorUnselect"></button>')
-      $('.colorUnselect').click(function () {
+      $('.colorUnselect').on('touchstart', function () {
         $('.colorUnselect').remove();
         cSelect.removeClass('responsive');
       })
@@ -570,19 +577,19 @@ $(document).ready(function(){
 
   function flipCard(e) {
     let card = e.parent().parent();
-    let inCard = $('.card-inner');
+    let cards = $('.playerCard:not(.dead)').children();
     let numFlipped = document.getElementsByClassName('flipped');
     let isFlipped = card.hasClass('flipped');
     let p = card.parent().attr('class').replace(/\D/g,'');
     if (isFlipped) {
       card.removeClass('flipped');
       commandMode = false;
-      inCard.removeClass('cmd cd' + p)
+      cards.removeClass('cmd cd' + p)
     } else {
       commandMode = true;
       if (numFlipped.length <= 0) {
         card.addClass('flipped');
-        inCard.addClass('cmd cd' + p)
+        cards.addClass('cmd cd' + p)
         card.removeClass('cmd cd' + p)
       }
     }
@@ -621,6 +628,16 @@ $(document).ready(function(){
   }
   function playerIndex(el) {
     return playerNumber(el) - 1;
+  }
+
+  function mainState() {
+    let flippedCards = $('.flipped');
+    flippedCards.removeClass('flipped');
+    let cmdCards = $('.cmd');
+    cmdCards.removeClass('cmd')
+    for (var i = 1; i <= 6; i++) {
+      cmdCards.removeClass('cd' + i);
+    }
   }
 
   function updateLocalStorage() {
